@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveScript : MonoBehaviour
 {
     //Movement related
+    [Header("Movement")]
     public CharacterController controller;
     public float speed = 12f;
     public float gravity = -9.81f;
@@ -14,17 +15,20 @@ public class MoveScript : MonoBehaviour
     public float jumpHeight = 3f;
 
     //Ground Check
+    [Header("Ground Check")]
     public Transform groundCheck;
     public float groundDistance;
     public LayerMask groundMask;
     bool isGrounded;
 
+    //Active next wagon
     public WagonManager current;
 
     private void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
+        //Temporary to set room cleared
         if (Input.GetKeyDown(KeyCode.R))
         {
             current.cleared = true;
@@ -56,10 +60,10 @@ public class MoveScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.layer == 8)
+        //Sets Current wagon to the room you are in
+        if(collision.gameObject.GetComponent<WagonManager>())
         {
             current = collision.gameObject.GetComponent<WagonManager>();
-            
         }
     }
 }
