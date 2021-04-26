@@ -32,7 +32,7 @@ FeverDream/fmod_editor.log
 fmod_editor.log
 FeverDream/*.log
 fmod.log
-fmod_editor.log
+FeverDream/fmod_editor.log
 
 # Unity3D generated meta files
 *.pidb.meta
