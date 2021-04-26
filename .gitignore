@@ -25,6 +25,14 @@ ExportedObj/
 *.opendb
 *.VC.db
 
+/FeverDream/fmod_editor.log
+/FeverDream/Assets/Plugins/FMOD/.user
+/FeverDream/Assets/Plugins/FMOD/.unsaved
+/FeverDream/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+/FeverDream/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset.meta
+/FeverDream/Assets/StreamingAssets//*.bank
+/FeverDream/Assets/StreamingAssets//*.bank.meta
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
@@ -35,4 +43,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-FeverDream/fmod_editor.log
+*.log
