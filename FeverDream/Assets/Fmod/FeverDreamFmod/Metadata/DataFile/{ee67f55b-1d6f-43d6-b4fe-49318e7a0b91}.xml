@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="DataFile" id="{ee67f55b-1d6f-43d6-b4fe-49318e7a0b91}">
+		<property name="assetPath">
+			<value>step_sounds/train 1/water step/water step (6).wav.meta</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{eb055d4e-f209-4c03-92b8-47b4e7483e17}</destination>
+		</relationship>
+	</object>
+</objects>

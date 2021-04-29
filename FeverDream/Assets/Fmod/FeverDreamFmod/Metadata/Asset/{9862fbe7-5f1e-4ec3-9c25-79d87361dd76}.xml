@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EncodableAsset" id="{9862fbe7-5f1e-4ec3-9c25-79d87361dd76}">
+		<property name="assetPath">
+			<value>step_sounds/train 1/water step/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{eb055d4e-f209-4c03-92b8-47b4e7483e17}</destination>
+		</relationship>
+	</object>
+</objects>

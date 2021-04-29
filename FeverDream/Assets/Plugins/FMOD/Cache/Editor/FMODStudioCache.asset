@@ -1,5 +1,87 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8326159904125525561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/intimate_lonely
+  m_EditorClassIdentifier: 
+  Name: intimate_lonely
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1360084813
+    data2: 135869044
+  Exists: 1
+--- !u!114 &-3108326635782311168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/intimate_lonely
+  m_EditorClassIdentifier: 
+  Name: intimate_lonely
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1360084813
+    data2: 135869044
+  Exists: 0
+--- !u!114 &-2982661265277026909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Build/Desktop/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Fmod/FeverDreamFmod/Build/Desktop/Master.bank
+  Name: Build/Desktop/Master
+  StudioPath: bank:/Master
+  lastModified: 637550378269752563
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-1768044173140720088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/stapje_test
+  m_EditorClassIdentifier: 
+  Path: event:/stapje_test
+  guid: 891d4ea8fab6314d862bb79c643253f3
+  Banks:
+  - {fileID: -2982661265277026909}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1690620534015631552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,7 +97,7 @@ MonoBehaviour:
   Path: Assets/Fmod/first_fmod_test_nion/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637550393656259968
+  lastModified: 637550386337061656
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -32,16 +114,20 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 7240237292678793007}
-  - {fileID: -1690620534015631552}
+  - {fileID: 7271349253820029922}
+  - {fileID: 5297570103908527718}
+  - {fileID: -2982661265277026909}
+  - {fileID: 8840909417156693112}
   EditorEvents:
-  - {fileID: 5796833767000013587}
-  EditorParameters: []
+  - {fileID: -1768044173140720088}
+  EditorParameters:
+  - {fileID: -8326159904125525561}
   MasterBanks:
-  - {fileID: -1690620534015631552}
+  - {fileID: 5297570103908527718}
+  - {fileID: -2982661265277026909}
   StringsBanks:
-  - {fileID: 7240237292678793007}
-  stringsBankWriteTime: 637550393656269976
+  - {fileID: 7271349253820029922}
+  stringsBankWriteTime: 0
   cacheVersion: 6
 --- !u!114 &431820088812146659
 MonoBehaviour:
@@ -87,6 +173,25 @@ MonoBehaviour:
   - Name: Desktop
     Value: 748
   Exists: 1
+--- !u!114 &5297570103908527718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Banks/Desktop/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Fmod/FeverDreamFmod/Banks/Desktop/Master.bank
+  Name: Banks/Desktop/Master
+  StudioPath: bank:/Master
+  lastModified: 637553124531538973
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &5796833767000013587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,11 +230,32 @@ MonoBehaviour:
   Path: Assets/Fmod/first_fmod_test_nion/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637550393656269976
+  lastModified: 637550386337091581
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 748
+  Exists: 1
+--- !u!114 &7271349253820029922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Banks/Desktop/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Fmod/FeverDreamFmod/Banks/Desktop/Master.strings.bank
+  Name: Banks/Desktop/Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637553124531568906
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 968
   Exists: 1
 --- !u!114 &7416907438047876785
 MonoBehaviour:
@@ -148,5 +274,24 @@ MonoBehaviour:
   StudioPath: bank:/Master
   lastModified: 637550391142835325
   LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &8840909417156693112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Banks/Desktop/trein1.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Fmod/FeverDreamFmod/Banks/Desktop/trein1.bank
+  Name: Banks/Desktop/trein1
+  StudioPath: 
+  lastModified: 637553124555128725
+  LoadResult: 13
   FileSizes: []
   Exists: 1
