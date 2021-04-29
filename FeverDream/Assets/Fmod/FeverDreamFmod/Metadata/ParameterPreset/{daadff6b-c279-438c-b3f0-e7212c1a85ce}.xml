@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{daadff6b-c279-438c-b3f0-e7212c1a85ce}">
+		<property name="name">
+			<value>intimate_lonely</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ff9a09f8-a06e-4e0f-8872-b6c42860c836}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{bf98b656-d2dc-4157-b50a-2882832cd7b9}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{bf98b656-d2dc-4157-b50a-2882832cd7b9}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
