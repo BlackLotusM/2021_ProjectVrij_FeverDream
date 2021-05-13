@@ -37,7 +37,6 @@
 		</relationship>
 		<relationship name="banks">
 			<destination>{a5ad0dd3-83d3-476d-a7f7-9f10ec749fbe}</destination>
-			<destination>{f0e8cd46-b0be-4cde-a674-0249ead5bb52}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{0283ae9d-00b0-4dae-80a2-145f60ef4371}">
@@ -142,8 +141,11 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{348d10ce-b585-48b3-be44-9d8d77457e05}">
+		<property name="volume">
+			<value>-6</value>
+		</property>
 		<property name="name">
-			<value>Audio 1</value>
+			<value>rubber</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{89c402c9-327a-4ea0-95c0-444986872702}</destination>
@@ -181,7 +183,7 @@
 			<value>-6</value>
 		</property>
 		<property name="name">
-			<value>Audio 2</value>
+			<value>water steps</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{c4f2ea00-012a-4985-8d89-fb531a72abf5}</destination>
