@@ -697,8 +697,7 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: 1733361788426075299}
   - {fileID: -3116185935196444624}
-  EditorParameters:
-  - {fileID: 6513946017108628105}
+  EditorParameters: []
   MasterBanks:
   - {fileID: 4365935587325399538}
   StringsBanks:
