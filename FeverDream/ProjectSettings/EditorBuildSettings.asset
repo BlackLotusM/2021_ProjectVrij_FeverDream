@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: a45bd728220954592a2857d80fe9cfdb
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 764e83a70fdc22042a764650463c3d85
+  - enabled: 1
     path: Assets/Scenes/Quote.unity
     guid: 2b4750db76b6e4a6588d888f2dd02425
   - enabled: 1
