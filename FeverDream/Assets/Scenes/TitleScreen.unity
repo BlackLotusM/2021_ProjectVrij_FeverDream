@@ -356,7 +356,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771591510}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 8d5b55589a0cf4258bc837c42170610b, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 013fb97ca92d952468c07a956f75145c, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 120990403}
@@ -373,7 +373,8 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: file://E:/School/Github/2021_ProjectVrij_FeverDream/FeverDream/Assets/1.
+    WORKFOLDERS/Em/Visuals/quote Phobetor.mov
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
