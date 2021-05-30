@@ -42,6 +42,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 38219
+--- !u!114 &-7695214032012024633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/trein1_steps
+  m_EditorClassIdentifier: 
+  Path: event:/trein1_steps
+  guid: 8e4e808b8a11d443a3ff04071dc87b1e
+  Banks:
+  - {fileID: -6509067577379005596}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
 --- !u!114 &-7138520636281747759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,6 +81,25 @@ MonoBehaviour:
   Name: Master
   StudioPath: bank:/Master
   lastModified: 637553832150499467
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-6509067577379005596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/trein1.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Fmod/FeverDreamFmod/Banks/Desktop/trein1.bank
+  Name: trein1
+  StudioPath: bank:/trein1
+  lastModified: 637575602350534471
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -107,6 +149,46 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1000
+--- !u!114 &-4029179455261705086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/trein1_envirome nt/train1_intensity
+  m_EditorClassIdentifier: 
+  Name: train1_intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-2951883390981590678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/intimate_lonely
+  m_EditorClassIdentifier: 
+  Name: intimate_lonely
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1360084813
+    data2: 135869044
+  Exists: 1
 --- !u!114 &-1875617142153097372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +229,50 @@ MonoBehaviour:
     data1: 1360084813
     data2: 135869044
   Exists: 0
+--- !u!114 &-423565658745289049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/trein1_shepard_tone
+  m_EditorClassIdentifier: 
+  Path: event:/trein1_shepard_tone
+  guid: 64b1029231a897439de558dcea2bc01a
+  Banks:
+  - {fileID: -6509067577379005596}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-211369225447580576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Fmod/FeverDreamFmod/Banks/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637575602350394344
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 1022
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,18 +286,19 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 5756937379068474653}
-  - {fileID: -7138520636281747759}
-  - {fileID: 8752044634444783033}
+  - {fileID: -211369225447580576}
+  - {fileID: 2511358670784984564}
+  - {fileID: -6509067577379005596}
   EditorEvents:
-  - {fileID: 4662830098554148480}
-  - {fileID: -5663502936239365355}
-  - {fileID: 1869016202107217687}
-  EditorParameters: []
+  - {fileID: 7260183288839591189}
+  - {fileID: -423565658745289049}
+  - {fileID: -7695214032012024633}
+  EditorParameters:
+  - {fileID: -2951883390981590678}
   MasterBanks:
-  - {fileID: -7138520636281747759}
+  - {fileID: 2511358670784984564}
   StringsBanks:
-  - {fileID: 5756937379068474653}
+  - {fileID: -211369225447580576}
   stringsBankWriteTime: 637575602350394344
   cacheVersion: 6
 --- !u!114 &1869016202107217687
@@ -214,6 +341,25 @@ MonoBehaviour:
   Name: Desktop/Master
   StudioPath: bank:/Master
   lastModified: 637568711870000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &2511358670784984564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Fmod/FeverDreamFmod/Banks/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637553832150499467
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -341,6 +487,30 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &7260183288839591189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/trein1_envirome nt
+  m_EditorClassIdentifier: 
+  Path: event:/trein1_envirome nt
+  guid: 2cf1a3ab1e278746bd89bfcbea2718f1
+  Banks:
+  - {fileID: -6509067577379005596}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4029179455261705086}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &7285956134047518480
 MonoBehaviour:
   m_ObjectHideFlags: 0
