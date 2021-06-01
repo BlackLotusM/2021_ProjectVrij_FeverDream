@@ -32,6 +32,9 @@ public class MoveScript : MonoBehaviour
     public Image croshairPlaceholder;
     public Sprite interactSprite;
     public Sprite standardSprite;
+    public TicketManager ticketManager;
+    public GameObject[] rebusDingen;
+    public LookScript lookScript;
 
     private void Update()
     {
@@ -44,6 +47,58 @@ public class MoveScript : MonoBehaviour
                 if (hit.collider.tag == "Interactable")
                 {
                     croshairPlaceholder.sprite = interactSprite;
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        if(hit.collider.name == "Ticket")
+                        {
+                            ticketManager.interact();
+                        }
+
+                        if (hit.collider.name == "btn")
+                        {
+                            hit.collider.GetComponent<ButtonManager>().interact();
+                        }
+
+                        if (hit.collider.name == "SolveA")
+                        {
+                            hit.collider.GetComponent<SolveA>().interact();
+                        }
+
+                        if (hit.collider.name == "Rebus_1")
+                        {
+                            canMove = false;
+                            lookScript.canLook = false;
+                            rebusDingen[0].SetActive(true);
+                        }
+
+                        if (hit.collider.name == "Rebus_2")
+                        {
+                            canMove = false;
+                            lookScript.canLook = false;
+                            rebusDingen[1].SetActive(true);
+                        }
+
+                        if (hit.collider.name == "Rebus_3")
+                        {
+                            canMove = false;
+                            lookScript.canLook = false;
+                            rebusDingen[2].SetActive(true);
+                        }
+
+                        if (hit.collider.name == "Rebus_4")
+                        {
+                            canMove = false;
+                            lookScript.canLook = false;
+                            rebusDingen[3].SetActive(true);
+                        }
+
+                        if (hit.collider.name == "Rebus_5")
+                        {
+                            canMove = false;
+                            lookScript.canLook = false;
+                            rebusDingen[4].SetActive(true);
+                        }
+                    }
                 }
                 else
                 {
