@@ -19,7 +19,7 @@ namespace FMOD
     */
     public partial class VERSION
     {
-        public const int    number = 0x00020109;
+        public const int    number = 0x00020110;
 #if !UNITY_2017_4_OR_NEWER
         public const string dll    = "fmod";
 #endif

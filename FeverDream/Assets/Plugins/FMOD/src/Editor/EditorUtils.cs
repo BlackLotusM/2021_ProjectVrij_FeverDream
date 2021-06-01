@@ -292,7 +292,7 @@ namespace FMODUnity
 
             for (int i = 0; i < emitter.Params.Length; i++)
             {
-                if (!eventRef.Parameters.Exists((x) => x.Name == emitter.Params[i].Name))
+                if (!eventRef.LocalParameters.Exists((x) => x.Name == emitter.Params[i].Name))
                 {
                     int end = emitter.Params.Length - 1;
                     emitter.Params[i] = emitter.Params[end];
@@ -648,7 +648,14 @@ namespace FMODUnity
                 FMOD.Studio.PARAMETER_DESCRIPTION paramDesc;
                 CheckResult(previewEventDesc.getParameterDescriptionByName(param.Name, out paramDesc));
                 param.ID = paramDesc.id;
-                PreviewUpdateParameter(param.ID, previewParamValues[param.Name]);
+                if (param.IsGlobal)
+                {
+                    CheckResult(System.setParameterByID(param.ID, previewParamValues[param.Name]));
+                }
+                else
+                {
+                    PreviewUpdateParameter(param.ID, previewParamValues[param.Name]);
+                }
             }
 
             CheckResult(previewEventInstance.start());
