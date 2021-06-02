@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{52234c58-dd00-43e0-8623-b431524a21b3}">
+		<property name="name">
+			<value>TreinRidingSoundLoop</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ff9a09f8-a06e-4e0f-8872-b6c42860c836}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{775602fd-2fc6-4dee-8fcf-d833a780c049}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{775602fd-2fc6-4dee-8fcf-d833a780c049}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

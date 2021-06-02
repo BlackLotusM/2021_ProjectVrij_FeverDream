@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{e4a550d8-60ab-4afc-9847-e07fe96beb84}">
 		<property name="assetPath">
-			<value>MetalFalling (10).wav</value>
+			<value>MetalFalling/MetalFalling (10).wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
