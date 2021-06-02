@@ -13,6 +13,7 @@ public class TicketManager : MonoBehaviour
     public LookScript lookScript;
     public MoveScript moveScript;
     public GameObject[] rebusZooi;
+    public bool skip;
     int count;
     void Start()
     {
@@ -22,59 +23,61 @@ public class TicketManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        count = 0;
-        if (Input.GetKeyDown(KeyCode.Escape))
+        count = 0; if (skip)
         {
-            foreach(GameObject go in rebusZooi)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if(go.activeSelf == true)
+                foreach (GameObject go in rebusZooi)
                 {
-                    count++;
-                }
-                moveScript.canMove = true;
-                lookScript.canLook = true;
-                go.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
-
-            if (count == 0)
-            {
-                if (invulCanvas.activeSelf == true)
-                {
-                    invulCanvas.SetActive(false);
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Cursor.visible = false;
+                    if (go.activeSelf == true)
+                    {
+                        count++;
+                    }
                     moveScript.canMove = true;
                     lookScript.canLook = true;
+                    go.SetActive(false);
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
                 }
-                else
+
+                if (count == 0)
                 {
-                    if (pickedUp)
+                    if (invulCanvas.activeSelf == true)
                     {
-                        canvasEscape.SetActive(!canvasEscape.activeSelf);
-                        canvasTicket.SetActive(canvasEscape.activeSelf);
-                        lookScript.canLook = !canvasEscape.activeSelf;
-                        moveScript.canMove = !canvasEscape.activeSelf;
-                    }
-                    else
-                    {
-                        canvasEscape.SetActive(!canvasEscape.activeSelf);
-                        canvasTicket.SetActive(false);
-                        lookScript.canLook = !canvasEscape.activeSelf;
-                        moveScript.canMove = !canvasEscape.activeSelf;
-
-                    }
-
-                    if (canvasEscape.activeSelf == true)
-                    {
-                        Cursor.lockState = CursorLockMode.None;
-                        Cursor.visible = true;
-                    }
-                    else
-                    {
+                        invulCanvas.SetActive(false);
                         Cursor.lockState = CursorLockMode.Locked;
                         Cursor.visible = false;
+                        moveScript.canMove = true;
+                        lookScript.canLook = true;
+                    }
+                    else
+                    {
+                        if (pickedUp)
+                        {
+                            canvasEscape.SetActive(!canvasEscape.activeSelf);
+                            canvasTicket.SetActive(canvasEscape.activeSelf);
+                            lookScript.canLook = !canvasEscape.activeSelf;
+                            moveScript.canMove = !canvasEscape.activeSelf;
+                        }
+                        else
+                        {
+                            canvasEscape.SetActive(!canvasEscape.activeSelf);
+                            canvasTicket.SetActive(false);
+                            lookScript.canLook = !canvasEscape.activeSelf;
+                            moveScript.canMove = !canvasEscape.activeSelf;
+
+                        }
+
+                        if (canvasEscape.activeSelf == true)
+                        {
+                            Cursor.lockState = CursorLockMode.None;
+                            Cursor.visible = true;
+                        }
+                        else
+                        {
+                            Cursor.lockState = CursorLockMode.Locked;
+                            Cursor.visible = false;
+                        }
                     }
                 }
             }

@@ -35,6 +35,7 @@ public class MoveScript : MonoBehaviour
     public TicketManager ticketManager;
     public GameObject[] rebusDingen;
     public LookScript lookScript;
+    public FadeAtNoMovement lvl2Mech;
 
     private void Update()
     {
@@ -57,6 +58,11 @@ public class MoveScript : MonoBehaviour
                         if (hit.collider.name == "btn")
                         {
                             hit.collider.GetComponent<ButtonManager>().interact();
+                        }
+
+                        if (hit.collider.name == "Button")
+                        {
+                            hit.collider.GetComponent<levelCbtnHandler>().interact();
                         }
 
                         if (hit.collider.name == "SolveA")
@@ -145,6 +151,27 @@ public class MoveScript : MonoBehaviour
         if(collision.gameObject.GetComponent<WagonManager>())
         {
             current = collision.gameObject.GetComponent<WagonManager>();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "lvl2")
+        {
+            lvl2Mech.enabled = true;
+        }
+        else
+        {
+            lvl2Mech.enabled = false;
+            lvl2Mech.imageFade.color = new Color(0, 0, 0, 0);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "lvl3")
+        {
+            lvl2Mech.enabled = true;
         }
     }
 }
