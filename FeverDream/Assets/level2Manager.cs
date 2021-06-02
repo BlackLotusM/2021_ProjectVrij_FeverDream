@@ -8,7 +8,13 @@ public class level2Manager : MonoBehaviour
     public List<string> words;
     public TextMeshProUGUI[] fill;
     //public string[] words;
+    public Animator anim;
+    public bool played;
 
+    public void play()
+    {
+        anim.Play("DoorOpen");
+    }
     private void Update()
     {
         if (words.Count > 5)
@@ -27,7 +33,11 @@ public class level2Manager : MonoBehaviour
         {
             if(words[0] == "ACCEPT" && words[1] == "HAUNTED" && words[2] == "CORRIDORS" && words[3] == "YOUR" && words[4] == "BRAIN")
             {
-                Debug.Log("Correct");
+                if (!played)
+                {
+                    play();
+                    played = true;
+                }
             }
             else
             {

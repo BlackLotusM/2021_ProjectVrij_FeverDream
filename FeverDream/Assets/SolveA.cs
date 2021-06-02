@@ -12,6 +12,13 @@ public class SolveA : MonoBehaviour
     public LookScript lookScript;
     public MoveScript moveScript;
     public RoomA roomA;
+
+    public Animator anim;
+
+    public void play()
+    {
+        anim.Play("DoorOpen");
+    }
     public void interact()
     {
         invulDing.SetActive(true);
@@ -31,7 +38,7 @@ public class SolveA : MonoBehaviour
         if (string.Equals(text, "don'tletyourmindescape", StringComparison.OrdinalIgnoreCase) || string.Equals(text, "dontletyourmindescape", StringComparison.OrdinalIgnoreCase))
         {
             invulDing.SetActive(false);
-            roomA.play();
+            play();
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             lookScript.canLook = true;

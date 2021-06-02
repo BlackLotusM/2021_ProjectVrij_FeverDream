@@ -71,7 +71,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Height: 0.1
-    - _HorizBeweging: 1.02
+    - _HorizBeweging: 0
     - _Metallic: 0
     - _NoiseScale: 2
     - _OcclusionStrength: 1
@@ -82,7 +82,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _VertBeweging: 0
+    - _VertBeweging: 0.23635194
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
