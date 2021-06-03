@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class startC : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class startC : MonoBehaviour
     public GameObject correctWall;
     public GameObject light;
     public GameObject border;
+    public TicketManager tm;
+    public GameObject[] handler;
+    public VideoClip clip;
+    public VideoPlayer player;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -28,7 +33,8 @@ public class startC : MonoBehaviour
                 anim2.Play("CloseDoor");
                 walkedIn2 = true;
             }
-        }else
+        }
+        else
         if (!walkedIn)
         {
             anim.Play("CloseDoor");
@@ -40,10 +46,12 @@ public class startC : MonoBehaviour
         }
     }
 
+    bool finsh;
     private void Update()
     {
         if (secondLevelActive)
         {
+            player.clip = clip;
             foreach (GameObject go in needstobeactive)
             {
                 if (go.activeSelf == true)
@@ -53,16 +61,26 @@ public class startC : MonoBehaviour
             }
             if (count == 0)
             {
-                //SetLight onn
-                //Disable collider
-                light.SetActive(true);
-                correctWall.GetComponentInChildren<BoxCollider>().isTrigger = true;
-                border.SetActive(false);
+                if (!finsh)
+                {
+                    finsh = true;
+                    light.SetActive(true);
+                    correctWall.GetComponentInChildren<BoxCollider>().isTrigger = true;
+                    border.SetActive(false);
+                    tm.addState(); foreach (GameObject go in handler)
+                    {
+                        go.GetComponent<levelCbtnHandler>().disabled = true;
+                    }
+                }
             }
             else
             {
                 //Light off 
                 //Colider on
+                foreach(GameObject go in handler)
+                {
+                    go.GetComponent<levelCbtnHandler>().disabled = false;
+                }
                 light.SetActive(false);
                 correctWall.GetComponentInChildren<BoxCollider>().isTrigger = false;
             }
@@ -84,8 +102,14 @@ public class startC : MonoBehaviour
                 {
                     if (anim2.GetCurrentAnimatorStateInfo(0).IsName("New State"))
                     {
+                        foreach (GameObject handle in handler)
+                        {
+
+                            handle.GetComponent<levelCbtnHandler>().disabled = true;
+                        }
                         anim2.Play("DoorOpen");
                         played = true;
+                        tm.addState();
                     }
                 }
             }

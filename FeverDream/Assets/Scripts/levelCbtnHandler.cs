@@ -8,26 +8,31 @@ public class levelCbtnHandler : MonoBehaviour
     public GameObject btnPressed;
     public GameObject btnNotPressed;
     public bool pressed;
+    public bool disabled;
 
     public void interact()
     {
-        pressed = !pressed;
-        foreach (GameObject go in group)
+        if (!disabled)
         {
-            go.SetActive(!go.activeSelf);
-        }
+            pressed = !pressed;
+            foreach (GameObject go in group)
+            {
+                go.SetActive(!go.activeSelf);
+            }
 
-        if (pressed)
-        {
-            btnPressed.SetActive(true);
-            btnNotPressed.SetActive(false);
+            if (pressed)
+            {
+                btnPressed.SetActive(true);
+                btnNotPressed.SetActive(false);
+            }
+            else
+            {
+                btnPressed.SetActive(false);
+                btnNotPressed.SetActive(true);
+            }
         }
-        else
-        {
-            btnPressed.SetActive(false);
-            btnNotPressed.SetActive(true);
-        }
+    }
     }
 
     
-}
+

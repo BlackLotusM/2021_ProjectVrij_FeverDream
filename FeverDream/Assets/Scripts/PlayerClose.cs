@@ -14,6 +14,7 @@ public class PlayerClose : MonoBehaviour
     public float z;
     Coroutine test;
     public startC c;
+    public TicketManager tm;
 
     private void Update()
     {
@@ -58,6 +59,7 @@ public class PlayerClose : MonoBehaviour
             backDoor.Play("DoorOpen");
             backDoorCol.SetActive(false);
             done = true;
+            tm.addState();
         }
         else
         {

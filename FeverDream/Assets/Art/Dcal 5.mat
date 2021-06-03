@@ -22,10 +22,10 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Dcal 5
   m_Shader: {fileID: 4800000, guid: e0575b155683bd641bcf5cdaf736b2ef, type: 3}
-  m_ShaderKeywords: _UnityFogEnable
+  m_ShaderKeywords: _FracUVEnable _MULALPHATORGB_ON _UnityFogEnable
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -68,12 +68,12 @@ Material:
     - _Cutoff: 0.5
     - _DstBlend: 1
     - _EnvironmentReflections: 1
-    - _FracUVEnable: 0
+    - _FracUVEnable: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _MulAlphaToRGB: 0
+    - _MulAlphaToRGB: 1
     - _OcclusionStrength: 1
     - _ProjectionAngleDiscardEnable: 0
     - _ProjectionAngleDiscardThreshold: 0

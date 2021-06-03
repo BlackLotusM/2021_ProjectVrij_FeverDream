@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TicketManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private bool pickedUp;
+    public bool pickedUp;
     public GameObject ticket;
     public GameObject canvasTicket;
     public GameObject invulCanvas;
@@ -14,15 +15,50 @@ public class TicketManager : MonoBehaviour
     public MoveScript moveScript;
     public GameObject[] rebusZooi;
     public bool skip;
+    public int current = 0;
+    public Image target;
+    public Sprite[] states;
+    public GameObject activateTicket;
     int count;
-    void Start()
+
+    public void addState()
     {
-        
+        current++;
+        canvasTicket.SetActive(true);
+        activateTicket.SetActive(true);
+        moveScript.canMove = false;
+        lookScript.canLook = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(current == 1)
+        {
+            target.sprite = states[0];
+        }
+        else if (current == 2)
+        {
+            target.sprite = states[1];
+        }
+        else if (current == 3)
+        {
+            target.sprite = states[2];
+        }
+        else if (current == 4)
+        {
+            target.sprite = states[3];
+        }
+        else if (current == 5)
+        {
+            target.sprite = states[4];
+        }
+        else if (current == 6)
+        {
+            target.sprite = states[5];
+        }
+
+
         count = 0; 
         if (!skip)
         {

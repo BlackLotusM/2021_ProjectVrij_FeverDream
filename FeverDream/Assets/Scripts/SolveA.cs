@@ -12,8 +12,9 @@ public class SolveA : MonoBehaviour
     public LookScript lookScript;
     public MoveScript moveScript;
     public RoomA roomA;
-
+    public TicketManager tm;
     public Animator anim;
+    public TMP_Text text2;
 
     public void play()
     {
@@ -28,6 +29,15 @@ public class SolveA : MonoBehaviour
         moveScript.canMove = false;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("te");
+            text2.color = new Color32(1,1,1,0);
+        }
+    }
+
     public void Solve()
     {
         //string.Equals(val, "astringvalue", StringComparison.OrdinalIgnoreCase)
@@ -37,12 +47,21 @@ public class SolveA : MonoBehaviour
 
         if (string.Equals(text, "don'tletyourmindescape", StringComparison.OrdinalIgnoreCase) || string.Equals(text, "dontletyourmindescape", StringComparison.OrdinalIgnoreCase))
         {
-            invulDing.SetActive(false);
-            play();
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            lookScript.canLook = true;
-            moveScript.canMove = true;
+            if (tm.pickedUp == true)
+            {
+                invulDing.SetActive(false);
+                play();
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                lookScript.canLook = true;
+                moveScript.canMove = true;
+                tm.addState();
+            }
+            else
+            {
+                
+                text2.color = new Color(1, 1, 1, 1);
+            }
         }
     }
 }

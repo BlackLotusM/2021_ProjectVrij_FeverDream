@@ -36,6 +36,7 @@ public class MoveScript : MonoBehaviour
     public GameObject[] rebusDingen;
     public LookScript lookScript;
     public FadeAtNoMovement lvl2Mech;
+    
 
     
     private void Start()
@@ -59,6 +60,7 @@ public class MoveScript : MonoBehaviour
                         if(hit.collider.name == "Ticket")
                         {
                             ticketManager.interact();
+                            ticketManager.addState();
                         }
 
                         if (hit.collider.name == "btn")

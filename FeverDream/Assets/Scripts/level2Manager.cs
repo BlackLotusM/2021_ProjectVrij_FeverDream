@@ -10,6 +10,7 @@ public class level2Manager : MonoBehaviour
     //public string[] words;
     public Animator anim;
     public bool played;
+    public TicketManager tm;
 
     public void play()
     {
@@ -37,6 +38,7 @@ public class level2Manager : MonoBehaviour
                 {
                     play();
                     played = true;
+                    tm.addState();
                 }
             }
             else
