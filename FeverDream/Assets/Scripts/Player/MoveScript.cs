@@ -37,6 +37,12 @@ public class MoveScript : MonoBehaviour
     public LookScript lookScript;
     public FadeAtNoMovement lvl2Mech;
 
+    
+    private void Start()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/trein1_standup", GetComponent<Transform>().position);
+       
+    }
     private void Update()
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
