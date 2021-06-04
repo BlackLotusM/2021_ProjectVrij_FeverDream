@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{aba3f12c-271e-4687-bd89-bfcbea2718f1}">
 		<property name="name">
-			<value>trein1_envirome nt</value>
+			<value>trein1_enviroment</value>
 		</property>
 		<property name="outputFormat">
 			<value>5</value>
