@@ -1,6 +1,134 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8993550913366482116
+--- !u!114 &-6701478436058034927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335f0a4b26fb46942858ea029e030d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  identifier: playInEditor
+  parentIdentifier: 
+  displaySortOrder: 0
+  active: 1
+  Properties:
+    LiveUpdate:
+      Value: 1
+      HasValue: 1
+    LiveUpdatePort:
+      Value: 0
+      HasValue: 0
+    Overlay:
+      Value: 1
+      HasValue: 1
+    Logging:
+      Value: 0
+      HasValue: 0
+    SampleRate:
+      Value: 48000
+      HasValue: 1
+    BuildDirectory:
+      Value: 
+      HasValue: 0
+    SpeakerMode:
+      Value: 0
+      HasValue: 0
+    VirtualChannelCount:
+      Value: 1024
+      HasValue: 1
+    RealChannelCount:
+      Value: 256
+      HasValue: 1
+    DSPBufferLength:
+      Value: 0
+      HasValue: 0
+    DSPBufferCount:
+      Value: 0
+      HasValue: 0
+    Plugins:
+      Value: []
+      HasValue: 0
+    StaticPlugins:
+      Value: []
+      HasValue: 0
+    CallbackHandler:
+      Value: {fileID: 0}
+      HasValue: 0
+  childIdentifiers: []
+  outputType: 
+  threadAffinities:
+    Value: []
+    HasValue: 0
+--- !u!114 &-6561980044836782333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73549a74f689f0849a8271d9e908c514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  identifier: b7716510a1f36934c87976f3a81dbf3d
+  parentIdentifier: default
+  displaySortOrder: 0
+  active: 0
+  Properties:
+    LiveUpdate:
+      Value: 0
+      HasValue: 0
+    LiveUpdatePort:
+      Value: 0
+      HasValue: 0
+    Overlay:
+      Value: 0
+      HasValue: 0
+    Logging:
+      Value: 0
+      HasValue: 0
+    SampleRate:
+      Value: 0
+      HasValue: 0
+    BuildDirectory:
+      Value: 
+      HasValue: 0
+    SpeakerMode:
+      Value: 0
+      HasValue: 0
+    VirtualChannelCount:
+      Value: 0
+      HasValue: 0
+    RealChannelCount:
+      Value: 0
+      HasValue: 0
+    DSPBufferLength:
+      Value: 0
+      HasValue: 0
+    DSPBufferCount:
+      Value: 0
+      HasValue: 0
+    Plugins:
+      Value: []
+      HasValue: 0
+    StaticPlugins:
+      Value: []
+      HasValue: 0
+    CallbackHandler:
+      Value: {fileID: 0}
+      HasValue: 0
+  childIdentifiers: []
+  outputType: 
+  threadAffinities:
+    Value: []
+    HasValue: 0
+--- !u!114 &-5641442899198657107
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,263 +201,7 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
---- !u!114 &-8741926977998986499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9660e62d6232af242877f0cc2b90c63d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  identifier: 2c5177b11d81d824dbb064f9ac8527da
-  parentIdentifier: default
-  displaySortOrder: 0
-  active: 0
-  Properties:
-    LiveUpdate:
-      Value: 0
-      HasValue: 0
-    LiveUpdatePort:
-      Value: 0
-      HasValue: 0
-    Overlay:
-      Value: 0
-      HasValue: 0
-    Logging:
-      Value: 0
-      HasValue: 0
-    SampleRate:
-      Value: 0
-      HasValue: 0
-    BuildDirectory:
-      Value: 
-      HasValue: 0
-    SpeakerMode:
-      Value: 0
-      HasValue: 0
-    VirtualChannelCount:
-      Value: 0
-      HasValue: 0
-    RealChannelCount:
-      Value: 0
-      HasValue: 0
-    DSPBufferLength:
-      Value: 0
-      HasValue: 0
-    DSPBufferCount:
-      Value: 0
-      HasValue: 0
-    Plugins:
-      Value: []
-      HasValue: 0
-    StaticPlugins:
-      Value: []
-      HasValue: 0
-    CallbackHandler:
-      Value: {fileID: 0}
-      HasValue: 0
-  childIdentifiers: []
-  outputType: 
-  threadAffinities:
-    Value: []
-    HasValue: 0
---- !u!114 &-8413586502909714584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b87314b32fbe18943af496e4b47136c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  identifier: 46fbfdf3fc43db0458918377fd40293e
-  parentIdentifier: default
-  displaySortOrder: 0
-  active: 0
-  Properties:
-    LiveUpdate:
-      Value: 0
-      HasValue: 0
-    LiveUpdatePort:
-      Value: 0
-      HasValue: 0
-    Overlay:
-      Value: 0
-      HasValue: 0
-    Logging:
-      Value: 0
-      HasValue: 0
-    SampleRate:
-      Value: 0
-      HasValue: 0
-    BuildDirectory:
-      Value: 
-      HasValue: 0
-    SpeakerMode:
-      Value: 0
-      HasValue: 0
-    VirtualChannelCount:
-      Value: 0
-      HasValue: 0
-    RealChannelCount:
-      Value: 0
-      HasValue: 0
-    DSPBufferLength:
-      Value: 0
-      HasValue: 0
-    DSPBufferCount:
-      Value: 0
-      HasValue: 0
-    Plugins:
-      Value: []
-      HasValue: 0
-    StaticPlugins:
-      Value: []
-      HasValue: 0
-    CallbackHandler:
-      Value: {fileID: 0}
-      HasValue: 0
-  childIdentifiers: []
-  outputType: 
-  threadAffinities:
-    Value: []
-    HasValue: 0
---- !u!114 &-5996650280821740930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 335f0a4b26fb46942858ea029e030d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  identifier: playInEditor
-  parentIdentifier: 
-  displaySortOrder: 0
-  active: 1
-  Properties:
-    LiveUpdate:
-      Value: 1
-      HasValue: 1
-    LiveUpdatePort:
-      Value: 0
-      HasValue: 0
-    Overlay:
-      Value: 1
-      HasValue: 1
-    Logging:
-      Value: 0
-      HasValue: 0
-    SampleRate:
-      Value: 48000
-      HasValue: 1
-    BuildDirectory:
-      Value: 
-      HasValue: 0
-    SpeakerMode:
-      Value: 0
-      HasValue: 0
-    VirtualChannelCount:
-      Value: 1024
-      HasValue: 1
-    RealChannelCount:
-      Value: 256
-      HasValue: 1
-    DSPBufferLength:
-      Value: 0
-      HasValue: 0
-    DSPBufferCount:
-      Value: 0
-      HasValue: 0
-    Plugins:
-      Value: []
-      HasValue: 0
-    StaticPlugins:
-      Value: []
-      HasValue: 0
-    CallbackHandler:
-      Value: {fileID: 0}
-      HasValue: 0
-  childIdentifiers: []
-  outputType: 
-  threadAffinities:
-    Value: []
-    HasValue: 0
---- !u!114 &-4802060189370565292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73549a74f689f0849a8271d9e908c514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  identifier: b7716510a1f36934c87976f3a81dbf3d
-  parentIdentifier: default
-  displaySortOrder: 0
-  active: 0
-  Properties:
-    LiveUpdate:
-      Value: 0
-      HasValue: 0
-    LiveUpdatePort:
-      Value: 0
-      HasValue: 0
-    Overlay:
-      Value: 0
-      HasValue: 0
-    Logging:
-      Value: 0
-      HasValue: 0
-    SampleRate:
-      Value: 0
-      HasValue: 0
-    BuildDirectory:
-      Value: 
-      HasValue: 0
-    SpeakerMode:
-      Value: 0
-      HasValue: 0
-    VirtualChannelCount:
-      Value: 0
-      HasValue: 0
-    RealChannelCount:
-      Value: 0
-      HasValue: 0
-    DSPBufferLength:
-      Value: 0
-      HasValue: 0
-    DSPBufferCount:
-      Value: 0
-      HasValue: 0
-    Plugins:
-      Value: []
-      HasValue: 0
-    StaticPlugins:
-      Value: []
-      HasValue: 0
-    CallbackHandler:
-      Value: {fileID: 0}
-      HasValue: 0
-  childIdentifiers: []
-  outputType: 
-  threadAffinities:
-    Value: []
-    HasValue: 0
---- !u!114 &-2847880645544355347
+--- !u!114 &-4883583749781495737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -393,7 +265,7 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
---- !u!114 &-1881200852589442854
+--- !u!114 &-2891371933138929409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -472,8 +344,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 0
   HasPlatforms: 0
-  sourceProjectPath: C:/Users/Mikey/Documents/FMOD Studio/examples/Examples.fspro
-  sourceBankPath: Assets/Fmod/Desktop
+  sourceProjectPath: Assets/Fmod/FeverDreamFmod/FeverDreamFmod.fspro
+  sourceBankPath: Assets/Fmod/FeverDreamFmod/Banks/Desktop
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -495,8 +367,9 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins: []
   MasterBanks:
-  - Desktop/Master
-  Banks: []
+  - Master
+  Banks:
+  - trein1
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
@@ -509,83 +382,19 @@ MonoBehaviour:
   SharedLibraryTimeSinceStart: 0
   HideSetupWizard: 1
   Platforms:
-  - {fileID: -5996650280821740930}
-  - {fileID: -8993550913366482116}
-  - {fileID: 3957988548039778961}
-  - {fileID: 7634484248043001390}
-  - {fileID: -8741926977998986499}
-  - {fileID: 7239936842776522921}
-  - {fileID: -2847880645544355347}
-  - {fileID: -4802060189370565292}
-  - {fileID: -1881200852589442854}
-  - {fileID: -8413586502909714584}
-  - {fileID: 7038028228986865864}
+  - {fileID: -6701478436058034927}
+  - {fileID: -5641442899198657107}
+  - {fileID: 4218268638106115844}
+  - {fileID: 6288270651403740476}
+  - {fileID: 6764910149305725124}
+  - {fileID: 8541117749626413033}
+  - {fileID: -4883583749781495737}
+  - {fileID: -6561980044836782333}
+  - {fileID: -2891371933138929409}
+  - {fileID: 7892041748945400184}
+  - {fileID: 2049941758223331328}
   MigratedPlatforms: 0c000000150000000b0000000a00000009000000120000000800000005000000060000000200000001000000
---- !u!114 &3957988548039778961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3abeb1429547a134480f4f2f1efc7e21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  identifier: c88d16e5272a4e241b0ef0ac2e53b73d
-  parentIdentifier: default
-  displaySortOrder: 0
-  active: 0
-  Properties:
-    LiveUpdate:
-      Value: 0
-      HasValue: 0
-    LiveUpdatePort:
-      Value: 0
-      HasValue: 0
-    Overlay:
-      Value: 0
-      HasValue: 0
-    Logging:
-      Value: 0
-      HasValue: 0
-    SampleRate:
-      Value: 0
-      HasValue: 0
-    BuildDirectory:
-      Value: 
-      HasValue: 0
-    SpeakerMode:
-      Value: 0
-      HasValue: 0
-    VirtualChannelCount:
-      Value: 0
-      HasValue: 0
-    RealChannelCount:
-      Value: 0
-      HasValue: 0
-    DSPBufferLength:
-      Value: 0
-      HasValue: 0
-    DSPBufferCount:
-      Value: 0
-      HasValue: 0
-    Plugins:
-      Value: []
-      HasValue: 0
-    StaticPlugins:
-      Value: []
-      HasValue: 0
-    CallbackHandler:
-      Value: {fileID: 0}
-      HasValue: 0
-  childIdentifiers: []
-  outputType: 
-  threadAffinities:
-    Value: []
-    HasValue: 0
---- !u!114 &7038028228986865864
+--- !u!114 &2049941758223331328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -649,7 +458,7 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
---- !u!114 &7239936842776522921
+--- !u!114 &4218268638106115844
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -658,10 +467,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17eea195bdfbf014e91ba7620ee491f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 3abeb1429547a134480f4f2f1efc7e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifier: e7a046c753c3c3d4aacc91f6597f310d
+  identifier: c88d16e5272a4e241b0ef0ac2e53b73d
   parentIdentifier: default
   displaySortOrder: 0
   active: 0
@@ -713,7 +522,7 @@ MonoBehaviour:
   threadAffinities:
     Value: []
     HasValue: 0
---- !u!114 &7634484248043001390
+--- !u!114 &6288270651403740476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -726,6 +535,198 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   identifier: fd7c55dab0fce234b8c25f6ffca523c1
+  parentIdentifier: default
+  displaySortOrder: 0
+  active: 0
+  Properties:
+    LiveUpdate:
+      Value: 0
+      HasValue: 0
+    LiveUpdatePort:
+      Value: 0
+      HasValue: 0
+    Overlay:
+      Value: 0
+      HasValue: 0
+    Logging:
+      Value: 0
+      HasValue: 0
+    SampleRate:
+      Value: 0
+      HasValue: 0
+    BuildDirectory:
+      Value: 
+      HasValue: 0
+    SpeakerMode:
+      Value: 0
+      HasValue: 0
+    VirtualChannelCount:
+      Value: 0
+      HasValue: 0
+    RealChannelCount:
+      Value: 0
+      HasValue: 0
+    DSPBufferLength:
+      Value: 0
+      HasValue: 0
+    DSPBufferCount:
+      Value: 0
+      HasValue: 0
+    Plugins:
+      Value: []
+      HasValue: 0
+    StaticPlugins:
+      Value: []
+      HasValue: 0
+    CallbackHandler:
+      Value: {fileID: 0}
+      HasValue: 0
+  childIdentifiers: []
+  outputType: 
+  threadAffinities:
+    Value: []
+    HasValue: 0
+--- !u!114 &6764910149305725124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9660e62d6232af242877f0cc2b90c63d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  identifier: 2c5177b11d81d824dbb064f9ac8527da
+  parentIdentifier: default
+  displaySortOrder: 0
+  active: 0
+  Properties:
+    LiveUpdate:
+      Value: 0
+      HasValue: 0
+    LiveUpdatePort:
+      Value: 0
+      HasValue: 0
+    Overlay:
+      Value: 0
+      HasValue: 0
+    Logging:
+      Value: 0
+      HasValue: 0
+    SampleRate:
+      Value: 0
+      HasValue: 0
+    BuildDirectory:
+      Value: 
+      HasValue: 0
+    SpeakerMode:
+      Value: 0
+      HasValue: 0
+    VirtualChannelCount:
+      Value: 0
+      HasValue: 0
+    RealChannelCount:
+      Value: 0
+      HasValue: 0
+    DSPBufferLength:
+      Value: 0
+      HasValue: 0
+    DSPBufferCount:
+      Value: 0
+      HasValue: 0
+    Plugins:
+      Value: []
+      HasValue: 0
+    StaticPlugins:
+      Value: []
+      HasValue: 0
+    CallbackHandler:
+      Value: {fileID: 0}
+      HasValue: 0
+  childIdentifiers: []
+  outputType: 
+  threadAffinities:
+    Value: []
+    HasValue: 0
+--- !u!114 &7892041748945400184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87314b32fbe18943af496e4b47136c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  identifier: 46fbfdf3fc43db0458918377fd40293e
+  parentIdentifier: default
+  displaySortOrder: 0
+  active: 0
+  Properties:
+    LiveUpdate:
+      Value: 0
+      HasValue: 0
+    LiveUpdatePort:
+      Value: 0
+      HasValue: 0
+    Overlay:
+      Value: 0
+      HasValue: 0
+    Logging:
+      Value: 0
+      HasValue: 0
+    SampleRate:
+      Value: 0
+      HasValue: 0
+    BuildDirectory:
+      Value: 
+      HasValue: 0
+    SpeakerMode:
+      Value: 0
+      HasValue: 0
+    VirtualChannelCount:
+      Value: 0
+      HasValue: 0
+    RealChannelCount:
+      Value: 0
+      HasValue: 0
+    DSPBufferLength:
+      Value: 0
+      HasValue: 0
+    DSPBufferCount:
+      Value: 0
+      HasValue: 0
+    Plugins:
+      Value: []
+      HasValue: 0
+    StaticPlugins:
+      Value: []
+      HasValue: 0
+    CallbackHandler:
+      Value: {fileID: 0}
+      HasValue: 0
+  childIdentifiers: []
+  outputType: 
+  threadAffinities:
+    Value: []
+    HasValue: 0
+--- !u!114 &8541117749626413033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17eea195bdfbf014e91ba7620ee491f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  identifier: e7a046c753c3c3d4aacc91f6597f310d
   parentIdentifier: default
   displaySortOrder: 0
   active: 0

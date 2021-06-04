@@ -353,8 +353,12 @@ retry:
         {
             public FMOD.Studio.EventInstance instance;
             public Transform transform;
+            #if UNITY_PHYSICS_EXIST || !UNITY_2019_1_OR_NEWER
             public Rigidbody rigidBody;
+            #endif
+            #if UNITY_PHYSICS2D_EXIST || !UNITY_2019_1_OR_NEWER
             public Rigidbody2D rigidBody2D;
+            #endif
         }
 
         List<AttachedInstance> attachedInstances = new List<AttachedInstance>(128);
@@ -473,13 +477,22 @@ retry:
                         continue;
                     }
 
+                    #if UNITY_PHYSICS_EXIST || !UNITY_2019_1_OR_NEWER
                     if (attachedInstances[i].rigidBody)
                     {
                         attachedInstances[i].instance.set3DAttributes(RuntimeUtils.To3DAttributes(attachedInstances[i].transform, attachedInstances[i].rigidBody));
                     }
                     else
+                    #endif
+                    #if UNITY_PHYSICS2D_EXIST || !UNITY_2019_1_OR_NEWER
+                    if (attachedInstances[i].rigidBody2D)
                     {
                         attachedInstances[i].instance.set3DAttributes(RuntimeUtils.To3DAttributes(attachedInstances[i].transform, attachedInstances[i].rigidBody2D));
+                    }
+                    else
+                    #endif
+                    {
+                        attachedInstances[i].instance.set3DAttributes(RuntimeUtils.To3DAttributes(attachedInstances[i].transform));
                     }
                 }
 
@@ -572,6 +585,21 @@ retry:
             }
         }
 
+        public static void AttachInstanceToGameObject(FMOD.Studio.EventInstance instance, Transform transform)
+        {
+            AttachedInstance attachedInstance = Instance.attachedInstances.Find(x => x.instance.handle == instance.handle);
+            if (attachedInstance == null)
+            {
+                attachedInstance = new AttachedInstance();
+                Instance.attachedInstances.Add(attachedInstance);
+            }
+
+            instance.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
+            attachedInstance.transform = transform;
+            attachedInstance.instance = instance;
+        }
+
+        #if UNITY_PHYSICS_EXIST || !UNITY_2019_1_OR_NEWER
         public static void AttachInstanceToGameObject(FMOD.Studio.EventInstance instance, Transform transform, Rigidbody rigidBody)
         {
             AttachedInstance attachedInstance = Instance.attachedInstances.Find(x => x.instance.handle == instance.handle);
@@ -586,7 +614,9 @@ retry:
             attachedInstance.instance = instance;
             attachedInstance.rigidBody = rigidBody;
         }
+        #endif
 
+        #if UNITY_PHYSICS2D_EXIST || !UNITY_2019_1_OR_NEWER
         public static void AttachInstanceToGameObject(FMOD.Studio.EventInstance instance, Transform transform, Rigidbody2D rigidBody2D)
         {
             AttachedInstance attachedInstance = Instance.attachedInstances.Find(x => x.instance.handle == instance.handle);
@@ -600,8 +630,8 @@ retry:
             attachedInstance.transform = transform;
             attachedInstance.instance = instance;
             attachedInstance.rigidBody2D = rigidBody2D;
-            attachedInstance.rigidBody = null;
         }
+        #endif
 
         public static void DetachInstanceFromGameObject(FMOD.Studio.EventInstance instance)
         {
@@ -1174,7 +1204,13 @@ retry:
         public static void PlayOneShotAttached(Guid guid, GameObject gameObject)
         {
             var instance = CreateInstance(guid);
+            #if UNITY_PHYSICS_EXIST || !UNITY_2019_1_OR_NEWER
             AttachInstanceToGameObject(instance, gameObject.transform, gameObject.GetComponent<Rigidbody>());
+            #elif UNITY_PHYSICS2D_EXIST || !UNITY_2019_1_OR_NEWER
+            AttachInstanceToGameObject(instance, gameObject.transform, gameObject.GetComponent<Rigidbody2D>());
+            #else
+            AttachInstanceToGameObject(instance, gameObject.transform);
+            #endif
             instance.start();
             instance.release();
         }
@@ -1218,57 +1254,58 @@ retry:
         public static List<StudioListener> Listeners = new List<StudioListener>();
         private static int numListeners = 0;
 
-        public static void SetListenerLocation(GameObject gameObject, Rigidbody rigidBody = null, GameObject attenuationObject = null)
+        #if UNITY_PHYSICS_EXIST || !UNITY_2019_1_OR_NEWER
+        public static void SetListenerLocation(GameObject gameObject, Rigidbody rigidBody, GameObject attenuationObject = null)
         {
-            SetListenerLocation3D(0, gameObject.transform, rigidBody, attenuationObject);
+            SetListenerLocation(0, gameObject, rigidBody, attenuationObject);
         }
-        
+
+        public static void SetListenerLocation(int listenerIndex, GameObject gameObject, Rigidbody rigidBody, GameObject attenuationObject = null)
+        {
+            if(attenuationObject)
+            {
+                Instance.studioSystem.setListenerAttributes(listenerIndex, RuntimeUtils.To3DAttributes(gameObject.transform, rigidBody), RuntimeUtils.ToFMODVector(attenuationObject.transform.position));
+            }
+            else
+            {
+                Instance.studioSystem.setListenerAttributes(listenerIndex, RuntimeUtils.To3DAttributes(gameObject.transform, rigidBody));
+            }
+        }
+        #endif
+
+        #if UNITY_PHYSICS2D_EXIST || !UNITY_2019_1_OR_NEWER
         public static void SetListenerLocation(GameObject gameObject, Rigidbody2D rigidBody2D, GameObject attenuationObject = null)
         {
-            SetListenerLocation2D(0, gameObject.transform, rigidBody2D, attenuationObject);
+            SetListenerLocation(0, gameObject, rigidBody2D, attenuationObject);
         }
 
-        public static void SetListenerLocation(Transform transform, GameObject attenuationObject = null)
-        {
-            SetListenerLocation3D(0, transform, null, attenuationObject);
-        }
-
-        public static void SetListenerLocation(int listenerIndex, GameObject gameObject, Rigidbody rigidBody = null, GameObject attenuationObject = null)
-        {
-            SetListenerLocation3D(listenerIndex, gameObject.transform, rigidBody, attenuationObject);
-        }
-        
         public static void SetListenerLocation(int listenerIndex, GameObject gameObject, Rigidbody2D rigidBody2D, GameObject attenuationObject = null)
         {
-            SetListenerLocation2D(listenerIndex, gameObject.transform, rigidBody2D, attenuationObject);
-        }
-
-        public static void SetListenerLocation(int listenerIndex, Transform transform, GameObject attenuationObject = null)
-        {
-            SetListenerLocation3D(listenerIndex, transform, null, attenuationObject);
-        }
-
-        private static void SetListenerLocation3D(int listenerIndex, Transform transform, Rigidbody rigidBody = null, GameObject attenuationObject = null)
-        {
             if (attenuationObject)
             {
-                Instance.studioSystem.setListenerAttributes(listenerIndex, RuntimeUtils.To3DAttributes(transform, rigidBody), RuntimeUtils.ToFMODVector(attenuationObject.transform.position));
+                Instance.studioSystem.setListenerAttributes(listenerIndex, RuntimeUtils.To3DAttributes(gameObject.transform, rigidBody2D), RuntimeUtils.ToFMODVector(attenuationObject.transform.position));
             }
             else
             {
-                Instance.studioSystem.setListenerAttributes(listenerIndex, RuntimeUtils.To3DAttributes(transform, rigidBody));
+                Instance.studioSystem.setListenerAttributes(listenerIndex, RuntimeUtils.To3DAttributes(gameObject.transform, rigidBody2D));
             }
         }
+        #endif
 
-        private static void SetListenerLocation2D(int listenerIndex, Transform transform, Rigidbody2D rigidBody = null, GameObject attenuationObject = null)
+        public static void SetListenerLocation(GameObject gameObject, GameObject attenuationObject = null)
+        {
+            SetListenerLocation(0, gameObject, attenuationObject);
+        }       
+        
+        public static void SetListenerLocation(int listenerIndex, GameObject gameObject, GameObject attenuationObject = null)
         {
             if (attenuationObject)
             {
-                Instance.studioSystem.setListenerAttributes(listenerIndex, RuntimeUtils.To3DAttributes(transform, rigidBody), RuntimeUtils.ToFMODVector(attenuationObject.transform.position));
+                Instance.studioSystem.setListenerAttributes(listenerIndex, RuntimeUtils.To3DAttributes(gameObject.transform), RuntimeUtils.ToFMODVector(attenuationObject.transform.position));
             }
             else
             {
-                Instance.studioSystem.setListenerAttributes(listenerIndex, RuntimeUtils.To3DAttributes(transform, rigidBody));
+                Instance.studioSystem.setListenerAttributes(listenerIndex, RuntimeUtils.To3DAttributes(gameObject.transform));
             }
         }
 
@@ -1337,9 +1374,9 @@ retry:
             return (Instance.loadedBanks.ContainsKey(loadedBank));
         }
 
-        #if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+#if (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
         [DllImport("__Internal")]
         private static extern void RegisterSuspendCallback(Action<bool> func);
-        #endif
+#endif
     }
 }

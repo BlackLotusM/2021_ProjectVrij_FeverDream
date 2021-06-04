@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7844287756500629484
+--- !u!114 &-9034819081361030487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,41 +10,308 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/iets minder rustige wobbletrein
+  m_Name: event:/trein1_chockinginslime
   m_EditorClassIdentifier: 
-  Path: event:/iets minder rustige wobbletrein
-  guid: 32be0a734834a44abdd3c563fb85c921
-  Banks: []
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 38219
---- !u!114 &-6460164367607763220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/music
-  m_EditorClassIdentifier: 
-  Path: event:/music
-  guid: 32be0a734834a44abdd3c563fb85c921
+  Path: event:/trein1_chockinginslime
+  guid: 0ce8cb1efcc69048a71310ccf4aa8fbf
   Banks:
-  - {fileID: 2401235918747419469}
+  - {fileID: -8100651839041536635}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 38219
+  Length: 24464
+--- !u!114 &-8949977624196693244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/trein1_driving
+  m_EditorClassIdentifier: 
+  Path: event:/trein1_driving
+  guid: 2fa11c94a560cc4cb82e1d0c5b225d34
+  Banks:
+  - {fileID: -8100651839041536635}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -134116450874590139}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 34951
+--- !u!114 &-8100651839041536635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/trein1.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Fmod/FeverDreamFmod/Banks/Desktop/trein1.bank
+  Name: trein1
+  StudioPath: bank:/trein1
+  lastModified: 637584108939412985
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-7562673974583492658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/trein1_envirome nt/train1_intensity
+  m_EditorClassIdentifier: 
+  Name: train1_intensity
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
+--- !u!114 &-7328498889842601721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/intimate_lonely
+  m_EditorClassIdentifier: 
+  Name: intimate_lonely
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1360084813
+    data2: 135869044
+  Type: 0
+  IsGlobal: 1
+  Exists: 1
+--- !u!114 &-7161328131922486393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/trein1_scaregrunts
+  m_EditorClassIdentifier: 
+  Path: event:/trein1_scaregrunts
+  guid: dd5d364b1c27784681117061bbc19344
+  Banks:
+  - {fileID: -8100651839041536635}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 692
+--- !u!114 &-5598655349720339040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Fmod/FeverDreamFmod/Banks/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637584108939103781
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3841950817810337585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/trein1_shepard_tone
+  m_EditorClassIdentifier: 
+  Path: event:/trein1_shepard_tone
+  guid: 64b1029231a897439de558dcea2bc01a
+  Banks:
+  - {fileID: -8100651839041536635}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-3586815352505854658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Fmod/FeverDreamFmod/Banks/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637584108939123731
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 1418
+  Exists: 1
+--- !u!114 &-3192984857899781612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/trein1_envirome nt
+  m_EditorClassIdentifier: 
+  Path: event:/trein1_envirome nt
+  guid: 2cf1a3ab1e278746bd89bfcbea2718f1
+  Banks:
+  - {fileID: -8100651839041536635}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -7562673974583492658}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-3020054258187517388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/trein1_furniturethrows
+  m_EditorClassIdentifier: 
+  Path: event:/trein1_furniturethrows
+  guid: 43179efee27eeb418da580add30b8d32
+  Banks:
+  - {fileID: -8100651839041536635}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2224
+--- !u!114 &-2299989953603876118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/trein1_standup
+  m_EditorClassIdentifier: 
+  Path: event:/trein1_standup
+  guid: 707447d52ec00b4c9dab1bbee7e4f144
+  Banks:
+  - {fileID: -8100651839041536635}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1224
+--- !u!114 &-459161548680027227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/trein1_steps
+  m_EditorClassIdentifier: 
+  Path: event:/trein1_steps
+  guid: 8e4e808b8a11d443a3ff04071dc87b1e
+  Banks:
+  - {fileID: -8100651839041536635}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 838901641725455030}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
+--- !u!114 &-134116450874590139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/trein1_driving/ToEnd
+  m_EditorClassIdentifier: 
+  Name: ToEnd
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,18 +325,30 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 3821529634321524230}
-  - {fileID: 2401235918747419469}
+  - {fileID: -3586815352505854658}
+  - {fileID: -5598655349720339040}
+  - {fileID: -8100651839041536635}
   EditorEvents:
-  - {fileID: -6460164367607763220}
-  EditorParameters: []
+  - {fileID: -9034819081361030487}
+  - {fileID: 3582967780949165199}
+  - {fileID: -3192984857899781612}
+  - {fileID: -8949977624196693244}
+  - {fileID: 5318792217685718495}
+  - {fileID: -3020054258187517388}
+  - {fileID: -3841950817810337585}
+  - {fileID: -2299989953603876118}
+  - {fileID: -459161548680027227}
+  - {fileID: -7161328131922486393}
+  - {fileID: 760995382079867814}
+  EditorParameters:
+  - {fileID: -7328498889842601721}
   MasterBanks:
-  - {fileID: 2401235918747419469}
+  - {fileID: -5598655349720339040}
   StringsBanks:
-  - {fileID: 3821529634321524230}
-  stringsBankWriteTime: 637550338182489124
-  cacheVersion: 6
---- !u!114 &2401235918747419469
+  - {fileID: -3586815352505854658}
+  stringsBankWriteTime: 637584108939123731
+  cacheVersion: 8
+--- !u!114 &760995382079867814
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,17 +357,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Desktop/Master.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/trein1_tripcoupesong
   m_EditorClassIdentifier: 
-  Path: Assets/Fmod/Desktop/Master.bank
-  Name: Desktop/Master
-  StudioPath: bank:/Master
-  lastModified: 637550338182479151
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &3821529634321524230
+  Path: event:/trein1_tripcoupesong
+  guid: e246c3508a56d34ea7c1a215cfdab045
+  Banks:
+  - {fileID: -8100651839041536635}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 192000
+--- !u!114 &838901641725455030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,19 +380,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/trein1_steps/intimate_lonely
   m_EditorClassIdentifier: 
-  Path: Assets/Fmod/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 637550338182489124
-  LoadResult: 0
-  FileSizes:
-  - Name: 
-    Value: 742
+  Name: intimate_lonely
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 1
   Exists: 1
---- !u!114 &5564867363094622754
+--- !u!114 &3582967780949165199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,13 +402,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Desktop/Bank A.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/trein1_cabinet
   m_EditorClassIdentifier: 
-  Path: Assets/Fmod/Desktop/Bank A.bank
-  Name: Desktop/Bank A
-  StudioPath: bank:/Bank A
-  lastModified: 637546396787407044
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
+  Path: event:/trein1_cabinet
+  guid: 189dd7b1fc51fd4483ed792639d309da
+  Banks:
+  - {fileID: -8100651839041536635}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2080
+--- !u!114 &5318792217685718495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/trein1_grunts
+  m_EditorClassIdentifier: 
+  Path: event:/trein1_grunts
+  guid: 37fe1c80c50a8e45801bf2dc8ced1bed
+  Banks:
+  - {fileID: -8100651839041536635}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{0bac2530-8523-448b-b233-88231495a6dc}">
+		<property name="name">
+			<value>train1_intensity</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ff9a09f8-a06e-4e0f-8872-b6c42860c836}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{791995be-1af0-454b-8eff-5d72db1b41ae}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{791995be-1af0-454b-8eff-5d72db1b41ae}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.22999998927116394</value>
+		</property>
+	</object>
+</objects>
