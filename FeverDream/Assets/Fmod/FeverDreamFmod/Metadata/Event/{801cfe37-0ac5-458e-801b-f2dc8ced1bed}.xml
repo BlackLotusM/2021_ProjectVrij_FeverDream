@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Event" id="{801cfe37-0ac5-458e-801b-f2dc8ced1bed}">
 		<property name="name">
-			<value>trein1_grunts</value>
+			<value>grunts</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
