@@ -3,7 +3,11 @@
 	<object class="Event" id="{50c346e2-568a-4ed3-a7c1-a215cfdab045}">
 		<property name="name">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			<value>tripcoupesong</value>
+=======
+			<value>trein1_tripcoupetheme</value>
+>>>>>>> Stashed changes
 =======
 			<value>trein1_tripcoupetheme</value>
 >>>>>>> Stashed changes
