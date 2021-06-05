@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{d8e6aa74-f920-4441-ad0f-33cc75767b80}">
+		<property name="name">
+			<value>trip_intensity</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ff9a09f8-a06e-4e0f-8872-b6c42860c836}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{83d651c7-0c48-4f80-90d1-9a1359b60e2b}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{83d651c7-0c48-4f80-90d1-9a1359b60e2b}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
