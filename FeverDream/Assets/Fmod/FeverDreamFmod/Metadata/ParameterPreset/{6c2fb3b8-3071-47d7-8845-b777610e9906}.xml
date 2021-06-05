@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{6c2fb3b8-3071-47d7-8845-b777610e9906}">
+		<property name="name">
+			<value>panic level</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ff9a09f8-a06e-4e0f-8872-b6c42860c836}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8cc105a8-2f0a-42e9-b7b7-3ffcc4f02c47}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8cc105a8-2f0a-42e9-b7b7-3ffcc4f02c47}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.52999997138977051</value>
+		</property>
+	</object>
+</objects>
