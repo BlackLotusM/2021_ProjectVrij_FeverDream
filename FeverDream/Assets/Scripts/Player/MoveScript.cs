@@ -36,13 +36,27 @@ public class MoveScript : MonoBehaviour
     public GameObject[] rebusDingen;
     public LookScript lookScript;
     public FadeAtNoMovement lvl2Mech;
-    
 
-    
+    [FMODUnity.EventRef]
+    public string steps;
+    [FMODUnity.EventRef]
+    public string ticket;
+    public void stepSound()
+    {
+        if (canMove)
+        {
+            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(steps);
+            }
+        }
+    }
+
     private void Start()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/trein1_standup", GetComponent<Transform>().position);
-       
+        InvokeRepeating("stepSound", 0, 0.5f);
+
     }
     private void Update()
     {
@@ -59,6 +73,7 @@ public class MoveScript : MonoBehaviour
                     {
                         if(hit.collider.name == "Ticket")
                         {
+                            FMODUnity.RuntimeManager.PlayOneShot(ticket);
                             ticketManager.interact();
                             ticketManager.addState();
                         }

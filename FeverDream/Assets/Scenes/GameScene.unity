@@ -1317,6 +1317,7 @@ GameObject:
   - component: {fileID: 345948847}
   - component: {fileID: 345948846}
   - component: {fileID: 345948845}
+  - component: {fileID: 345948849}
   m_Layer: 0
   m_Name: textabove door
   m_TagString: Untagged
@@ -1436,6 +1437,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345948843}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &345948849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345948843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de6cb0148024ea4daf0ece050f22ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hum: event:/destination panel hum
 --- !u!1 &368316716
 GameObject:
   m_ObjectHideFlags: 0
@@ -3469,7 +3483,6 @@ GameObject:
   - component: {fileID: 695644321}
   - component: {fileID: 695644323}
   - component: {fileID: 695644322}
-  - component: {fileID: 695644324}
   m_Layer: 5
   m_Name: Ticket
   m_TagString: Untagged
@@ -3534,25 +3547,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695644320}
   m_CullTransparentMesh: 0
---- !u!95 &695644324
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695644320}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 18b33ecb329d3df4195ea1e945d9ec87, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &741354927
 GameObject:
   m_ObjectHideFlags: 0
@@ -3623,7 +3617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 741354929}
-  speed: 6
+  speed: 3
   gravity: -9.81
   canMove: 0
   jumpHeight: 1
@@ -3646,6 +3640,8 @@ MonoBehaviour:
   - {fileID: 2049386402}
   lookScript: {fileID: 139725765}
   lvl2Mech: {fileID: 741354933}
+  steps: event:/normal steps
+  ticket: event:/grabs ticket
 --- !u!114 &741354931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9469,6 +9465,7 @@ GameObject:
   - component: {fileID: 1704219754}
   - component: {fileID: 1704219753}
   - component: {fileID: 1704219752}
+  - component: {fileID: 1704219756}
   m_Layer: 0
   m_Name: textabove door
   m_TagString: Untagged
@@ -9588,6 +9585,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704219750}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1704219756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704219750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de6cb0148024ea4daf0ece050f22ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hum: event:/destination panel hum
 --- !u!1 &1704515078
 GameObject:
   m_ObjectHideFlags: 0
@@ -10014,6 +10024,7 @@ GameObject:
   - component: {fileID: 1842327028}
   - component: {fileID: 1842327027}
   - component: {fileID: 1842327026}
+  - component: {fileID: 1842327030}
   m_Layer: 0
   m_Name: textabove door
   m_TagString: Untagged
@@ -10133,6 +10144,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842327024}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1842327030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842327024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de6cb0148024ea4daf0ece050f22ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hum: event:/destination panel hum
 --- !u!1 &1847605791
 GameObject:
   m_ObjectHideFlags: 0
