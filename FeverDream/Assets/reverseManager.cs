@@ -52,7 +52,7 @@ public class reverseManager : MonoBehaviour
             }
             else
             {
-                if (text.color.a < 255)
+                if (text.color.a < 0.17f)
                 {
                     text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a + 0.37f * Time.deltaTime);
                 }
