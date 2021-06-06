@@ -44,6 +44,9 @@ public class MoveScript : MonoBehaviour
     public string liquidsteps;
     [FMODUnity.EventRef]
     public string ticket;
+    [SerializeField]
+    public FMODUnity.StudioEventEmitter emitter;
+
     public void stepSound()
     {
         if (canMove)
@@ -201,12 +204,50 @@ public class MoveScript : MonoBehaviour
             lvl2Mech.imageFade.color = new Color(0, 0, 0, 0);
         }
     }
+    float temp;
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "lvl4")
+        {
+            if (ticketManager.current < 5)
+            {
+                if (temp < 1)
+                {
+                    temp += (float)0.12 * Time.deltaTime;
+                }
+            }
+            else
+            {
+                temp -= (float)0.5 * Time.deltaTime;
+            }
+            emitter.SetParameter("panic level", temp);
+            
+            Debug.Log(temp);
+            if (!emitter.IsPlaying())
+            {
+                emitter.Play();
+            }
+        }
+        else
+        {
+            if (emitter.IsPlaying())
+            {
+                emitter.Stop();
+            }
+
+        }
+    }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "lvl3")
         {
             lvl2Mech.enabled = true;
+        }
+
+        if (other.tag == "lvl4")
+        {
+            emitter.Stop();
         }
     }
 }
