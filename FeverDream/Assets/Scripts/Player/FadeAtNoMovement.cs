@@ -9,6 +9,9 @@ public class FadeAtNoMovement : MonoBehaviour
     private Vector3 lastPosition = new Vector3(0, 0, 0);
     public float fadeOutSpeed, fadeInSpeed;
     public bool initialMove;
+    [SerializeField]
+    public FMODUnity.StudioEventEmitter emitter;
+
 
     private void Start()
     {
@@ -26,6 +29,17 @@ public class FadeAtNoMovement : MonoBehaviour
 
         if (initialMove)
         {
+            if(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+            {
+                if (!emitter.IsPlaying())
+                {
+                    emitter.Play();
+                }
+            }
+            else
+            {
+                emitter.Stop();
+            }
             if (lastPosition == gameObject.transform.position)
             {
                 if (imageFade.color.a < 1)

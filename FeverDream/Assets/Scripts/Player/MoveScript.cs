@@ -36,9 +36,12 @@ public class MoveScript : MonoBehaviour
     public GameObject[] rebusDingen;
     public LookScript lookScript;
     public FadeAtNoMovement lvl2Mech;
+    public bool lvl2;
 
     [FMODUnity.EventRef]
     public string steps;
+    [FMODUnity.EventRef]
+    public string liquidsteps;
     [FMODUnity.EventRef]
     public string ticket;
     public void stepSound()
@@ -47,14 +50,21 @@ public class MoveScript : MonoBehaviour
         {
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
-                FMODUnity.RuntimeManager.PlayOneShot(steps);
+                if (lvl2)
+                {
+                    FMODUnity.RuntimeManager.PlayOneShot(liquidsteps, this.transform.position);
+                }
+                else
+                {
+                    FMODUnity.RuntimeManager.PlayOneShot(steps, this.transform.position);
+                }
             }
         }
     }
 
     private void Start()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/trein1_standup", GetComponent<Transform>().position);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/standup", GetComponent<Transform>().position);
         InvokeRepeating("stepSound", 0, 0.5f);
 
     }
@@ -181,10 +191,12 @@ public class MoveScript : MonoBehaviour
     {
         if (other.tag == "lvl2")
         {
+            lvl2 = true;
             lvl2Mech.enabled = true;
         }
         else
         {
+            lvl2 = false;
             lvl2Mech.enabled = false;
             lvl2Mech.imageFade.color = new Color(0, 0, 0, 0);
         }

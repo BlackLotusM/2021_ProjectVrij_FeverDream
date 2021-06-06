@@ -9,7 +9,7 @@ public class panelHum : MonoBehaviour
     public string hum;
     void Start()
     {
-        FMODUnity.RuntimeManager.PlayOneShot(hum, GetComponent<Transform>().position);
+        FMODUnity.RuntimeManager.PlayOneShot(hum, this.transform.position);
         FMODUnity.RuntimeManager.PlayOneShotAttached(hum, this.gameObject);
     }
 
