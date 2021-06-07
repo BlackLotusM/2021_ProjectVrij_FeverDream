@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{70ecab85-d9c2-40dd-a4ad-6a295c435b2e}">
+		<property name="name">
+			<value>fadeout_shepard</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ff9a09f8-a06e-4e0f-8872-b6c42860c836}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{11a6716e-adb5-4222-920b-8c19e1150378}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{11a6716e-adb5-4222-920b-8c19e1150378}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
