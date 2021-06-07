@@ -47,6 +47,14 @@ public class MoveScript : MonoBehaviour
     [SerializeField]
     public FMODUnity.StudioEventEmitter emitter;
 
+    [SerializeField]
+    public FMODUnity.StudioEventEmitter shepard;
+
+    [SerializeField]
+    public FMODUnity.StudioEventEmitter wobbel;
+    [SerializeField]
+    public FMODUnity.StudioEventEmitter lvl4;
+
     public void stepSound()
     {
         if (canMove)
@@ -190,15 +198,63 @@ public class MoveScript : MonoBehaviour
         }
     }
 
+    public float temp2;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "lvl2")
+        if (other.tag == "lvl3")
         {
+            if (!lvl4.IsPlaying())
+            {
+                temp2 = 0;
+                lvl4.SetParameter("ToCredits", temp2);
+                lvl4.Play();
+            }
+        }
+        if (other.tag == "lvl2" || other.tag == "lvl4" || other.tag == "tempDisable")
+        {
+            if (!shepard.IsPlaying())
+            {
+                shepard.Play();
+            }
+        }
+        
+        if(other.tag == "lvl3")
+        {
+            if (!lvl4.IsPlaying())
+            {
+                temp2 -= 0;
+                lvl4.SetParameter("ToCredits", temp2);
+                lvl4.Play();
+            }
+        }
+        else
+        {
+            temp2 += (float)0.1f * Time.deltaTime;
+            lvl4.SetParameter("ToCredits", temp2);
+            if(temp2 >= 1)
+            {
+                lvl4.Stop();
+            }
+        }
+
+        if(other.tag == "lvl3")
+        {
+            shepard.Stop();
+        }
+
+        if (other.tag == "lvl2" || other.tag == "tempDisable")
+        {
+            if (!wobbel.IsPlaying())
+            {
+                wobbel.Play();
+            }
             lvl2 = true;
             lvl2Mech.enabled = true;
         }
         else
         {
+            wobbel.Stop();
             lvl2 = false;
             lvl2Mech.enabled = false;
             lvl2Mech.imageFade.color = new Color(0, 0, 0, 0);
@@ -207,6 +263,25 @@ public class MoveScript : MonoBehaviour
     float temp;
     private void OnTriggerStay(Collider other)
     {
+        if (other.tag == "lvl3")
+        {
+            if (!lvl4.IsPlaying())
+            {
+                temp2 = 0;
+                Debug.Log("ik speel");
+                lvl4.SetParameter("ToCredits", temp2);
+            }
+        }
+        else
+        {
+            temp2 += (float)0.1f * Time.deltaTime;
+            lvl4.SetParameter("ToCredits", temp2);
+            if (temp2 >= 1)
+            {
+                lvl4.Stop();
+            }
+        }
+
         if (other.tag == "lvl4")
         {
             if (ticketManager.current < 5)
@@ -240,7 +315,7 @@ public class MoveScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "lvl3")
+        if (other.tag == "lvl3" || other.tag == "tempDisable")
         {
             lvl2Mech.enabled = true;
         }
@@ -248,6 +323,7 @@ public class MoveScript : MonoBehaviour
         if (other.tag == "lvl4")
         {
             emitter.Stop();
+
         }
     }
 }
