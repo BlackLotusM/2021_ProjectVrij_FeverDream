@@ -15,6 +15,7 @@ public class SolveA : MonoBehaviour
     public TicketManager tm;
     public Animator anim;
     public TMP_Text text2;
+    public bool done;
 
     public void play()
     {
@@ -22,18 +23,20 @@ public class SolveA : MonoBehaviour
     }
     public void interact()
     {
-        invulDing.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        lookScript.canLook = false;
-        moveScript.canMove = false;
+        if (!done)
+        {
+            invulDing.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            lookScript.canLook = false;
+            moveScript.canMove = false;
+        }
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("te");
             text2.color = new Color32(1,1,1,0);
         }
     }
@@ -49,6 +52,7 @@ public class SolveA : MonoBehaviour
         {
             if (tm.pickedUp == true)
             {
+                done = true;
                 invulDing.SetActive(false);
                 play();
                 Cursor.lockState = CursorLockMode.Locked;

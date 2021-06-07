@@ -85,14 +85,20 @@ public class MoveScript : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             float hoverError = hitDistance - hit.distance;
-            if (hoverError > 0)
+            if (Input.GetMouseButtonDown(0))
+            {
+                ticketManager.disa();
+            }
+                if (hoverError > 0)
             {
                 if (hit.collider.tag == "Interactable")
                 {
                     croshairPlaceholder.sprite = interactSprite;
                     if (Input.GetMouseButtonDown(0))
                     {
-                        if(hit.collider.name == "Ticket")
+                        ticketManager.disa();
+
+                        if (hit.collider.name == "Ticket")
                         {
                             FMODUnity.RuntimeManager.PlayOneShot(ticket);
                             ticketManager.interact();

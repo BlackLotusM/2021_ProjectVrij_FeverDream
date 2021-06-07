@@ -12,9 +12,11 @@ public class FadeAtNoMovement : MonoBehaviour
     [SerializeField]
     public FMODUnity.StudioEventEmitter emitter;
     public MoveScript ms;
+    public TicketManager tm;
     public Camera cam;
     public float height;
     public float intense;
+    
     private void Start()
     {
         initialMove = false;
@@ -36,7 +38,17 @@ public class FadeAtNoMovement : MonoBehaviour
             {
                 if (cam.transform.position.y > 0.8f)
                 {
-                    cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y - 0.1f * Time.deltaTime, cam.transform.position.z);
+                    if (tm.current <= 2)
+                    {
+                        cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y - 0.1f * Time.deltaTime, cam.transform.position.z);
+                    }
+                    else
+                    {
+                        if (cam.transform.position.y < height)
+                        {
+                            cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y + 0.8f * Time.deltaTime, cam.transform.position.z);
+                        }
+                    }
                     if (intense < 1)
                     {
                         intense += (float)0.1f * Time.deltaTime;

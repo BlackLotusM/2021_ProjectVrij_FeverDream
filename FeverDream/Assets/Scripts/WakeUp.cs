@@ -29,7 +29,6 @@ public class WakeUp : MonoBehaviour
             else
             {
                 done = true;
-                print("dadh");
                 moveScript.canMove = true;
                 lookScript.canLook = true;
             }
