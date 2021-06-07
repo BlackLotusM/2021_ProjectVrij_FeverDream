@@ -22,6 +22,7 @@ public class startC : MonoBehaviour
     public GameObject[] handler;
     public VideoClip clip;
     public VideoPlayer player;
+    public Material mat;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -63,13 +64,22 @@ public class startC : MonoBehaviour
             {
                 if (!finsh)
                 {
-                    finsh = true;
-                    light.SetActive(true);
-                    correctWall.GetComponentInChildren<BoxCollider>().isTrigger = true;
-                    border.SetActive(false);
-                    tm.addState(); foreach (GameObject go in handler)
+                    //Debug.Log("gg");
+                    if (walls[0].activeSelf == true && walls[1].activeSelf == true)
                     {
-                        go.GetComponent<levelCbtnHandler>().disabled = true;
+                        if (levelcaudio.r1 == true && levelcaudio.r2 == true)
+                        {
+                            walls[0].gameObject.GetComponentInChildren<MeshRenderer>().material = mat;
+                            finsh = true;
+                            light.SetActive(true);
+                            correctWall.GetComponentInChildren<BoxCollider>().isTrigger = true;
+                            border.SetActive(false);
+                            tm.addState();
+                            foreach (GameObject go in handler)
+                            {
+                                go.GetComponent<levelCbtnHandler>().disabled = true;
+                            }
+                        }
                     }
                 }
             }
@@ -98,18 +108,24 @@ public class startC : MonoBehaviour
             if (count == 0)
             {
                 //Debug.Log("gg");
-                if (!played)
+                if (walls[0].activeSelf == false && walls[1].activeSelf == false)
                 {
-                    if (anim2.GetCurrentAnimatorStateInfo(0).IsName("New State"))
+                    if (levelcaudio.r1 == false && levelcaudio.r2 == false)
                     {
-                        foreach (GameObject handle in handler)
+                        if (!played)
                         {
+                            if (anim2.GetCurrentAnimatorStateInfo(0).IsName("New State"))
+                            {
+                                foreach (GameObject handle in handler)
+                                {
 
-                            handle.GetComponent<levelCbtnHandler>().disabled = true;
+                                    handle.GetComponent<levelCbtnHandler>().disabled = true;
+                                }
+                                anim2.Play("DoorOpen");
+                                played = true;
+                                tm.addState();
+                            }
                         }
-                        anim2.Play("DoorOpen");
-                        played = true;
-                        tm.addState();
                     }
                 }
             }

@@ -15,6 +15,7 @@ public class PlayerClose : MonoBehaviour
     Coroutine test;
     public startC c;
     public TicketManager tm;
+    public levelCbtnHandler btn;
 
     private void Update()
     {
@@ -60,6 +61,7 @@ public class PlayerClose : MonoBehaviour
             backDoorCol.SetActive(false);
             done = true;
             tm.addState();
+            btn.second = true;
         }
         else
         {

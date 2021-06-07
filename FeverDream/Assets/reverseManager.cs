@@ -13,6 +13,8 @@ public class reverseManager : MonoBehaviour
     public float range;
     public float count;
     public TMP_Text text;
+    public Transform respawn;
+    public FadeAtNoMovement dm;
     void Start()
     {
         reverse.Play();
@@ -25,7 +27,20 @@ public class reverseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(count > 18)
+        {
+            Debug.Log("test");
+            count = 0;
+            dm.initialMove = false;
+            Color temp = dm.imageFade.color;
+            temp.a = 0;
+            dm.imageFade.color = temp;
+            dm.cam.transform.position = new Vector3(dm.cam.transform.position.x, dm.height, dm.cam.transform.position.z);
+            player.GetComponent<CharacterController>().enabled = false;
+            player.transform.position = respawn.transform.position;
+            player.GetComponent<CharacterController>().enabled = true;
+        }
+
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
             count = 0;

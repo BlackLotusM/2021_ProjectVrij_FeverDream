@@ -55,6 +55,7 @@ public class MoveScript : MonoBehaviour
     [SerializeField]
     public FMODUnity.StudioEventEmitter lvl4;
 
+
     public void stepSound()
     {
         if (canMove)
@@ -267,6 +268,7 @@ public class MoveScript : MonoBehaviour
         }
     }
     float temp;
+    bool played;
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "lvl3")
@@ -302,20 +304,14 @@ public class MoveScript : MonoBehaviour
                 temp -= (float)0.5 * Time.deltaTime;
             }
             emitter.SetParameter("panic level", temp);
-            
-            Debug.Log(temp);
             if (!emitter.IsPlaying())
             {
-                emitter.Play();
+                if (!played) {
+                    played = true;
+                    Debug.Log("reee");
+                    emitter.Play();
+                }
             }
-        }
-        else
-        {
-            if (emitter.IsPlaying())
-            {
-                emitter.Stop();
-            }
-
         }
     }
 
@@ -329,6 +325,7 @@ public class MoveScript : MonoBehaviour
         if (other.tag == "lvl4")
         {
             emitter.Stop();
+            Debug.Log("exitt");
 
         }
     }
