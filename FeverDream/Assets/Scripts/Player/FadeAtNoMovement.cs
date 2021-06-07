@@ -11,12 +11,15 @@ public class FadeAtNoMovement : MonoBehaviour
     public bool initialMove;
     [SerializeField]
     public FMODUnity.StudioEventEmitter emitter;
-
-
+    public MoveScript ms;
+    public Camera cam;
+    public float height;
+    public float intense;
     private void Start()
     {
         initialMove = false;
         lastPosition = gameObject.transform.position;
+        height = cam.transform.position.y;
     }
 
     // Update is called once per frame
@@ -31,6 +34,15 @@ public class FadeAtNoMovement : MonoBehaviour
         {
             if(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
             {
+                if (cam.transform.position.y > 0.8f)
+                {
+                    cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y - 0.1f * Time.deltaTime, cam.transform.position.z);
+                    if (intense < 1)
+                    {
+                        intense += (float)0.1f * Time.deltaTime;
+                        ms.wobbel.SetParameter("train1_intensity", intense);
+                    }
+                }
                 if (!emitter.IsPlaying())
                 {
                     emitter.Play();
@@ -38,6 +50,16 @@ public class FadeAtNoMovement : MonoBehaviour
             }
             else
             {
+                if (cam.transform.position.y < height)
+                {
+                    Debug.Log("test");
+                    cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y + 0.8f * Time.deltaTime, cam.transform.position.z);
+                    if (intense > 0)
+                    {
+                        intense -= (float)0.4f * Time.deltaTime;
+                        ms.wobbel.SetParameter("train1_intensity", intense);
+                    }
+                }
                 emitter.Stop();
             }
             if (lastPosition == gameObject.transform.position)

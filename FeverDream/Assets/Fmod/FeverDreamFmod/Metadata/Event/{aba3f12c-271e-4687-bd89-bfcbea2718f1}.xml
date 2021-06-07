@@ -117,7 +117,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{1436dbe0-ffff-4afb-9b85-6ee740108442}">
 		<property name="volume">
-			<value>-6.5</value>
+			<value>-44</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{85f22d67-a895-486d-a7c3-854cfa09bd49}</destination>
@@ -189,6 +189,9 @@
 		</property>
 		<property name="maxVoices">
 			<value>3</value>
+		</property>
+		<property name="volume">
+			<value>-80</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
