@@ -35,6 +35,9 @@
 		<relationship name="timeline">
 			<destination>{99db0dd0-7be4-4db4-96de-168fe1cdbefe}</destination>
 		</relationship>
+		<relationship name="parameters">
+			<destination>{c57d3136-6961-4ce3-9f8a-c5a1ed15228a}</destination>
+		</relationship>
 		<relationship name="banks">
 			<destination>{a5ad0dd3-83d3-476d-a7f7-9f10ec749fbe}</destination>
 		</relationship>
@@ -48,6 +51,7 @@
 		<relationship name="modules">
 			<destination>{f6f521af-90d7-4ab0-a324-c18462f53cd8}</destination>
 			<destination>{b9c155d0-c788-449d-9459-d701784faab1}</destination>
+			<destination>{f79d6c4c-238a-4314-aaf1-1a2945a4fc2f}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{24c938fe-c719-4bdc-b05b-b7f41aaeeef9}</destination>
@@ -95,6 +99,11 @@
 			<destination>{45bf79d0-8d7b-46e7-a658-d4f562090a4e}</destination>
 		</relationship>
 	</object>
+	<object class="ActionSheet" id="{c57d3136-6961-4ce3-9f8a-c5a1ed15228a}">
+		<relationship name="modules">
+			<destination>{f79d6c4c-238a-4314-aaf1-1a2945a4fc2f}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerMaster" id="{24c938fe-c719-4bdc-b05b-b7f41aaeeef9}">
 		<relationship name="effectChain">
 			<destination>{e61608ae-3d67-4e93-a53e-94c039a59679}</destination>
@@ -119,6 +128,11 @@
 			<value>0</value>
 		</property>
 	</object>
+	<object class="MultiSound" id="{f79d6c4c-238a-4314-aaf1-1a2945a4fc2f}">
+		<relationship name="sounds">
+			<destination>{15c15c83-3a6c-4cc1-9261-5e45b48226c8}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{1fa116f2-46ef-435e-b9d8-3dd4f2494071}">
 		<relationship name="effects">
 			<destination>{be50d54f-17e4-4e45-abcb-59baa25d2b3e}</destination>
@@ -131,6 +145,9 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{066042f3-8dd7-44c2-befb-671a663509bf}">
+		<property name="isAsync">
+			<value>true</value>
+		</property>
 		<property name="length">
 			<value>32</value>
 		</property>
@@ -255,6 +272,11 @@
 	<object class="MixerBusPanner" id="{f6170c8a-1b17-4460-a84a-469994226a08}">
 		<property name="disabledSpeakers">
 			<value>4</value>
+		</property>
+	</object>
+	<object class="CommandSound" id="{15c15c83-3a6c-4cc1-9261-5e45b48226c8}">
+		<property name="commandType">
+			<value>3</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{be50d54f-17e4-4e45-abcb-59baa25d2b3e}" />

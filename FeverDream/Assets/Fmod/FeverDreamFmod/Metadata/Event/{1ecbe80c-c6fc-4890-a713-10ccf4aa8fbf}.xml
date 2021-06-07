@@ -5,7 +5,7 @@
 			<value>trein1_chockinginslime</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{33254f36-d81b-4805-b9ed-05fb27857b37}</destination>
@@ -53,7 +53,7 @@
 			<destination>{730219ea-ba92-4e85-b206-b8c3c9a90fe2}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{c4ed5bfb-520d-4015-b325-dda7f8976b52}</destination>
+			<destination>{365dc713-33d6-4ca8-9891-ed887f935a5e}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{0309b93a-fea0-46b1-9cb5-eea6d78c8be3}" />
@@ -113,7 +113,6 @@
 	<object class="MixerBusEffectChain" id="{a7f41b0c-49c3-4a31-89c3-bcbfe41cfb21}">
 		<relationship name="effects">
 			<destination>{002e8083-ad8c-4c08-bbcd-4cf34e89ed06}</destination>
-			<destination>{7aec36a1-03b8-459c-991c-2d055b07816d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{49e25856-f25c-443a-84bd-fcb67cf6afd9}" />
@@ -125,6 +124,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{310f6703-fefa-4401-b42c-e7033f350d85}" />
 	<object class="MixerBusFader" id="{002e8083-ad8c-4c08-bbcd-4cf34e89ed06}" />
-	<object class="SpatialiserEffect" id="{7aec36a1-03b8-459c-991c-2d055b07816d}" />
 	<object class="MixerBusFader" id="{082ebc76-a5f0-4887-afa8-b11640c1b070}" />
 </objects>

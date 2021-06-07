@@ -5,7 +5,7 @@
 			<value>trein driving</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{33254f36-d81b-4805-b9ed-05fb27857b37}</destination>
@@ -263,7 +263,6 @@
 	<object class="MixerBusEffectChain" id="{a8d001e9-7c3e-4f75-9cac-461128a668f6}">
 		<relationship name="effects">
 			<destination>{8d29c9cd-83e6-43d0-8978-ee1ac580500c}</destination>
-			<destination>{5ace6df8-7e72-4017-a4e1-75494c2982cb}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2165e140-dd8b-4f46-971d-d81093e7f960}" />
@@ -332,7 +331,6 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{8d29c9cd-83e6-43d0-8978-ee1ac580500c}" />
-	<object class="SpatialiserEffect" id="{5ace6df8-7e72-4017-a4e1-75494c2982cb}" />
 	<object class="AutomationPoint" id="{ec1dc561-c59c-4ab2-9773-f40f4be9b90b}">
 		<property name="position">
 			<value>10</value>
