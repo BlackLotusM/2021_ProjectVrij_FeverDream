@@ -8,6 +8,7 @@ TagManager:
   - lvl2
   - lvl3
   - lvl4
+  - tempDisable
   layers:
   - Default
   - TransparentFX

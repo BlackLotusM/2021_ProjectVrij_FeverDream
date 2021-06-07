@@ -198,10 +198,19 @@ public class MoveScript : MonoBehaviour
         }
     }
 
-    float temp2;
+    public float temp2;
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "lvl3")
+        {
+            if (!lvl4.IsPlaying())
+            {
+                temp2 = 0;
+                lvl4.SetParameter("ToCredits", temp2);
+                lvl4.Play();
+            }
+        }
         if (other.tag == "lvl2" || other.tag == "lvl4" || other.tag == "tempDisable")
         {
             if (!shepard.IsPlaying())
@@ -210,7 +219,7 @@ public class MoveScript : MonoBehaviour
             }
         }
         
-        if(other.tag == "lvl4")
+        if(other.tag == "lvl3")
         {
             if (!lvl4.IsPlaying())
             {
@@ -234,9 +243,12 @@ public class MoveScript : MonoBehaviour
             shepard.Stop();
         }
 
-        if (other.tag == "lvl2")
+        if (other.tag == "lvl2" || other.tag == "tempDisable")
         {
-            wobbel.Play();
+            if (!wobbel.IsPlaying())
+            {
+                wobbel.Play();
+            }
             lvl2 = true;
             lvl2Mech.enabled = true;
         }
@@ -251,6 +263,25 @@ public class MoveScript : MonoBehaviour
     float temp;
     private void OnTriggerStay(Collider other)
     {
+        if (other.tag == "lvl3")
+        {
+            if (!lvl4.IsPlaying())
+            {
+                temp2 = 0;
+                Debug.Log("ik speel");
+                lvl4.SetParameter("ToCredits", temp2);
+            }
+        }
+        else
+        {
+            temp2 += (float)0.1f * Time.deltaTime;
+            lvl4.SetParameter("ToCredits", temp2);
+            if (temp2 >= 1)
+            {
+                lvl4.Stop();
+            }
+        }
+
         if (other.tag == "lvl4")
         {
             if (ticketManager.current < 5)
