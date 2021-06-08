@@ -23,6 +23,9 @@ public class startC : MonoBehaviour
     public VideoClip clip;
     public VideoPlayer player;
     public Material mat;
+
+    public Material[] trig;
+    public MeshRenderer[] objects;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -38,6 +41,10 @@ public class startC : MonoBehaviour
         else
         if (!walkedIn)
         {
+            for(int i = 0; i < objects.Length; i++)
+            {
+                objects[i].material = trig[i];
+            }
             anim.Play("CloseDoor");
             foreach (GameObject go in walls)
             {

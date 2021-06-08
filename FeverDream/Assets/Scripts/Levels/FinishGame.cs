@@ -31,7 +31,7 @@ public class FinishGame : MonoBehaviour
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(4);
             }
         }
         Debug.Log("ree");

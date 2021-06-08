@@ -1870,7 +1870,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 331693dd0b3852246a4b72bb670778cd, type: 2}
+  - {fileID: 2100000, guid: 10b3731521c09d342a101b4dd8d2ed6a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4033,8 +4033,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1.2042302}
-  m_Center: {x: 0, y: 0, z: -0.10211501}
+  m_Size: {x: 1, y: 1, z: 0.9324931}
+  m_Center: {x: 0, y: 0, z: -0.23798372}
 --- !u!1 &626209542
 GameObject:
   m_ObjectHideFlags: 0
@@ -4157,7 +4157,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 331693dd0b3852246a4b72bb670778cd, type: 2}
+  - {fileID: 2100000, guid: fb2bd6f0584a60f43ae03286090fb1f0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4258,6 +4258,7 @@ MonoBehaviour:
   - {fileID: 5760242141195135630}
   - {fileID: 637327205}
   - {fileID: 1971258681}
+  button: event:/panel button
 --- !u!65 &637327206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4702,6 +4703,7 @@ MonoBehaviour:
   wobbel: {fileID: 1256993109}
   lvl4: {fileID: 626209544}
   disableWobbel: 0
+  cantMove: 0
   temp2: 0
 --- !u!114 &741354931
 MonoBehaviour:
@@ -4777,6 +4779,7 @@ MonoBehaviour:
   cam: {fileID: 139725763}
   height: 0
   intense: 0
+  respawn: {fileID: 1807462566}
 --- !u!114 &741354934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7492,6 +7495,7 @@ MonoBehaviour:
   inactive: []
   buttons: []
   buttonsSecond: []
+  button: 
 --- !u!65 &1132111207
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8377,7 +8381,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 331693dd0b3852246a4b72bb670778cd, type: 2}
+  - {fileID: 2100000, guid: 1113a366ff63f4b479db057f2433a4e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10999,8 +11003,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5, y: 2.42, z: 11.877394}
-  m_Center: {x: 0, y: 0.8800001, z: 0.56130314}
+  m_Size: {x: 4.5, y: 2.42, z: 11.755497}
+  m_Center: {x: 0, y: 0.8800001, z: 0.50035477}
 --- !u!1 &1568115784
 GameObject:
   m_ObjectHideFlags: 0
@@ -12371,8 +12375,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.23, y: 5, z: 9.19}
-  m_Center: {x: 0, y: 1.63, z: 0}
+  m_Size: {x: 4.23, y: 5, z: 11.668949}
+  m_Center: {x: 0, y: 1.6300001, z: 0.33310127}
 --- !u!4 &1703546507
 Transform:
   m_ObjectHideFlags: 0
@@ -12453,6 +12457,22 @@ MonoBehaviour:
   clip: {fileID: 32900000, guid: 3b4d37ed1f9d84626a077ace8b13e488, type: 3}
   player: {fileID: 345948845}
   mat: {fileID: 2100000, guid: 05a538f82debe024c9225b7f4ea6733d, type: 2}
+  trig:
+  - {fileID: 2100000, guid: b2e0c1d373ab35d46aad74dd0d8d7c96, type: 2}
+  - {fileID: 2100000, guid: b2e0c1d373ab35d46aad74dd0d8d7c96, type: 2}
+  - {fileID: 2100000, guid: b2e0c1d373ab35d46aad74dd0d8d7c96, type: 2}
+  - {fileID: 2100000, guid: b2e0c1d373ab35d46aad74dd0d8d7c96, type: 2}
+  - {fileID: 2100000, guid: b2e0c1d373ab35d46aad74dd0d8d7c96, type: 2}
+  - {fileID: 2100000, guid: b2e0c1d373ab35d46aad74dd0d8d7c96, type: 2}
+  - {fileID: 2100000, guid: b2e0c1d373ab35d46aad74dd0d8d7c96, type: 2}
+  objects:
+  - {fileID: 627279401}
+  - {fileID: 1256743173}
+  - {fileID: 477614906}
+  - {fileID: 2062935011}
+  - {fileID: 277858855}
+  - {fileID: 398987762}
+  - {fileID: 1839041049}
 --- !u!114 &1703546509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14457,6 +14477,7 @@ MonoBehaviour:
   - {fileID: 5760242141195135630}
   - {fileID: 637327205}
   - {fileID: 1971258681}
+  button: event:/panel button
 --- !u!65 &1971258682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14937,7 +14958,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b2e0c1d373ab35d46aad74dd0d8d7c96, type: 2}
+  - {fileID: 2100000, guid: 35b7b6d45f68ee149af28ebfd302b0f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18155,6 +18176,7 @@ MonoBehaviour:
   - {fileID: 5760242141195135630}
   - {fileID: 637327205}
   - {fileID: 1971258681}
+  button: event:/panel button
 --- !u!1 &5760242141195135629
 GameObject:
   m_ObjectHideFlags: 0
@@ -18211,6 +18233,7 @@ MonoBehaviour:
   - {fileID: 5760242141195135630}
   - {fileID: 637327205}
   - {fileID: 1971258681}
+  button: event:/panel button
 --- !u!65 &5760242141195135631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18281,6 +18304,7 @@ MonoBehaviour:
   - {fileID: 5760242141195135630}
   - {fileID: 637327205}
   - {fileID: 1971258681}
+  button: event:/panel button
 --- !u!65 &5760242141895476853
 BoxCollider:
   m_ObjectHideFlags: 0

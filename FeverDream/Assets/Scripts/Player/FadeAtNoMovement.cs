@@ -16,6 +16,7 @@ public class FadeAtNoMovement : MonoBehaviour
     public Camera cam;
     public float height;
     public float intense;
+    public GameObject respawn;
     
     private void Start()
     {
@@ -23,19 +24,36 @@ public class FadeAtNoMovement : MonoBehaviour
         lastPosition = gameObject.transform.position;
         height = cam.transform.position.y;
     }
-
+    float count;
     // Update is called once per frame
     void Update()
     {
         if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0 || Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
         {
             initialMove = true;
+           
+            count = 0;
         }
-
+        if(count >= 19)
+        {
+            initialMove = false;
+            count = 0;
+            Color temp = imageFade.color;
+            temp.a = 0;
+            imageFade.color = temp;
+            cam.transform.position = new Vector3(cam.transform.position.x, height, cam.transform.position.z);
+            ms.gameObject.GetComponent<CharacterController>().enabled = false;
+            ms.gameObject.transform.position = respawn.transform.position;
+            ms.gameObject.GetComponent<CharacterController>().enabled = true;
+        }
         if (initialMove)
         {
             if(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
             {
+                    if (initialMove)
+                    {
+                        count += Time.deltaTime;
+                    }
                 if (!emitter.IsPlaying())
                 {
                     emitter.Play();
