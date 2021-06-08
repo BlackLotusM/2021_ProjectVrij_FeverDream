@@ -20,11 +20,15 @@ public class levelCbtnHandler : MonoBehaviour
     public GameObject[] inactive;
     public levelCbtnHandler[] buttons;
     public levelCbtnHandler[] buttonsSecond;
+
+    [FMODUnity.EventRef]
+    public string button;
+
     public void interact()
     {
-
         if (!disabled)
         {
+            FMODUnity.RuntimeManager.PlayOneShot(button, this.transform.position);
             if (reset)
             {
                 if (second)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class PlayerClose : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class PlayerClose : MonoBehaviour
     public startC c;
     public TicketManager tm;
     public levelCbtnHandler btn;
+    public VideoPlayer vidPlayer;
+    public VideoClip clip;
+    
 
     private void Update()
     {
@@ -53,12 +57,14 @@ public class PlayerClose : MonoBehaviour
     {
         if (!done)
         {
+            vidPlayer.clip = clip;
             c.secondLevelActive = true;
             started = true;
             yield return new WaitForSeconds(2);
             anim.Play("CloseDoor");
             backDoor.Play("DoorOpen");
             backDoorCol.SetActive(false);
+            tm.moveScript.disableWobbel = true;
             done = true;
             tm.addState();
             btn.second = true;

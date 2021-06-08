@@ -36,6 +36,18 @@ public class FadeAtNoMovement : MonoBehaviour
         {
             if(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
             {
+                if (!emitter.IsPlaying())
+                {
+                    emitter.Play();
+                    Debug.Log("dah");
+                }
+
+                if (!ms.wobbel.IsPlaying())
+                {
+                    ms.wobbel.Play();
+                    Debug.Log("dah");
+                }
+
                 if (cam.transform.position.y > 0.8f)
                 {
                     if (tm.current <= 2)
@@ -55,16 +67,12 @@ public class FadeAtNoMovement : MonoBehaviour
                         ms.wobbel.SetParameter("train1_intensity", intense);
                     }
                 }
-                if (!emitter.IsPlaying())
-                {
-                    emitter.Play();
-                }
+                
             }
             else
             {
                 if (cam.transform.position.y < height)
                 {
-                    Debug.Log("test");
                     cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y + 0.8f * Time.deltaTime, cam.transform.position.z);
                     if (intense > 0)
                     {

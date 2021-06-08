@@ -54,8 +54,16 @@ public class MoveScript : MonoBehaviour
     public FMODUnity.StudioEventEmitter wobbel;
     [SerializeField]
     public FMODUnity.StudioEventEmitter lvl4;
+    public bool disableWobbel;
+    public bool cantMove;
 
-
+    public void disa()
+    {
+        foreach (GameObject go in rebusDingen)
+        {
+            go.SetActive(false);
+        }
+    }
     public void stepSound()
     {
         if (canMove)
@@ -73,7 +81,7 @@ public class MoveScript : MonoBehaviour
             }
         }
     }
-
+    int tempInt;
     private void Start()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/standup", GetComponent<Transform>().position);
@@ -82,124 +90,155 @@ public class MoveScript : MonoBehaviour
     }
     private void Update()
     {
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit))
+        if (cantMove)
         {
-            float hoverError = hitDistance - hit.distance;
-            if (Input.GetMouseButtonDown(0))
+
+        }
+        else
+        {
+            if (disableWobbel)
             {
-                ticketManager.disa();
+                wobbel.Stop();
             }
-                if (hoverError > 0)
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.tag == "Interactable")
+                float hoverError = hitDistance - hit.distance;
+                if (Input.GetMouseButtonDown(0))
                 {
-                    croshairPlaceholder.sprite = interactSprite;
+                    ticketManager.disa();
+                }
+
+                foreach (GameObject go in rebusDingen)
+                {
+                    if (go.activeSelf)
+                    {
+                        tempInt++;
+                    }
+                }
+                if (tempInt > 0)
+                {
                     if (Input.GetMouseButtonDown(0))
                     {
-                        ticketManager.disa();
-
-                        if (hit.collider.name == "Ticket")
-                        {
-                            FMODUnity.RuntimeManager.PlayOneShot(ticket);
-                            ticketManager.interact();
-                            ticketManager.addState();
-                        }
-
-                        if (hit.collider.name == "btn")
-                        {
-                            hit.collider.GetComponent<ButtonManager>().interact();
-                        }
-
-                        if (hit.collider.name == "Button")
-                        {
-                            hit.collider.GetComponent<levelCbtnHandler>().interact();
-                        }
-
-                        if (hit.collider.name == "SolveA")
-                        {
-                            hit.collider.GetComponent<SolveA>().interact();
-                        }
-
-                        if (hit.collider.name == "Rebus_1")
-                        {
-                            canMove = false;
-                            lookScript.canLook = false;
-                            rebusDingen[0].SetActive(true);
-                        }
-
-                        if (hit.collider.name == "Rebus_2")
-                        {
-                            canMove = false;
-                            lookScript.canLook = false;
-                            rebusDingen[1].SetActive(true);
-                        }
-
-                        if (hit.collider.name == "Rebus_3")
-                        {
-                            canMove = false;
-                            lookScript.canLook = false;
-                            rebusDingen[2].SetActive(true);
-                        }
-
-                        if (hit.collider.name == "Rebus_4")
-                        {
-                            canMove = false;
-                            lookScript.canLook = false;
-                            rebusDingen[3].SetActive(true);
-                        }
-
-                        if (hit.collider.name == "Rebus_5")
-                        {
-                            canMove = false;
-                            lookScript.canLook = false;
-                            rebusDingen[4].SetActive(true);
-                        }
+                        disa();
                     }
+                    tempInt = 0;
                 }
                 else
                 {
-                    croshairPlaceholder.sprite = standardSprite;
+                    if (hoverError > 0)
+                    {
+                        if (hit.collider.tag == "Interactable")
+                        {
+                            croshairPlaceholder.sprite = interactSprite;
+                            if (Input.GetMouseButtonDown(0))
+                            {
+                                ticketManager.disa();
+
+                                if (hit.collider.name == "Ticket")
+                                {
+                                    FMODUnity.RuntimeManager.PlayOneShot(ticket);
+                                    ticketManager.interact();
+                                    ticketManager.addState();
+                                }
+
+                                if (hit.collider.name == "btn")
+                                {
+                                    hit.collider.GetComponent<ButtonManager>().interact();
+                                }
+
+                                if (hit.collider.name == "Button")
+                                {
+                                    hit.collider.GetComponent<levelCbtnHandler>().interact();
+                                }
+
+                                if (hit.collider.name == "SolveA")
+                                {
+                                    hit.collider.GetComponent<SolveA>().interact();
+                                }
+
+                                if (hit.collider.name == "Rebus_1")
+                                {
+                                    canMove = false;
+                                    lookScript.canLook = false;
+                                    rebusDingen[0].SetActive(true);
+                                }
+
+                                if (hit.collider.name == "Rebus_2")
+                                {
+                                    canMove = false;
+                                    lookScript.canLook = false;
+                                    rebusDingen[1].SetActive(true);
+                                }
+
+                                if (hit.collider.name == "Rebus_3")
+                                {
+                                    canMove = false;
+                                    lookScript.canLook = false;
+                                    rebusDingen[2].SetActive(true);
+                                }
+
+                                if (hit.collider.name == "Rebus_4")
+                                {
+                                    canMove = false;
+                                    lookScript.canLook = false;
+                                    rebusDingen[3].SetActive(true);
+                                }
+
+                                if (hit.collider.name == "Rebus_5")
+                                {
+                                    canMove = false;
+                                    lookScript.canLook = false;
+                                    rebusDingen[4].SetActive(true);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            croshairPlaceholder.sprite = standardSprite;
+                        }
+                    }
+                    else
+                    {
+                        croshairPlaceholder.sprite = standardSprite;
+                    }
+                }
+
+                isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+                if (canMove)
+                {
+                    if (isGrounded && velocity.y < 0)
+                    {
+                        velocity.y = -2;
+                    }
+                    else
+                    {
+                        velocity.y += gravity * Time.deltaTime;
+                    }
+
+                    if (Input.GetButtonDown("Jump") && isGrounded)
+                    {
+                        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                    }
+
+                    float x = Input.GetAxis("Horizontal");
+                    float z = Input.GetAxis("Vertical");
+
+                    Vector3 move = transform.right * x + transform.forward * z;
+                    controller.Move(move * speed * Time.deltaTime);
+
+                    controller.Move(velocity * Time.deltaTime);
                 }
             }
-            else
-            {
-                croshairPlaceholder.sprite = standardSprite;
-            }
-        }
-
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if (canMove)
-        {
-            if (isGrounded && velocity.y < 0)
-            {
-                velocity.y = -2;
-            }
-            else
-            {
-                velocity.y += gravity * Time.deltaTime;
-            }
-
-            if (Input.GetButtonDown("Jump") && isGrounded)
-            {
-                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            }
-
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
-
-            Vector3 move = transform.right * x + transform.forward * z;
-            controller.Move(move * speed * Time.deltaTime);
-
-            controller.Move(velocity * Time.deltaTime);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         //Sets Current wagon to the room you are in
-        if(collision.gameObject.GetComponent<WagonManager>())
+        if (collision.gameObject.GetComponent<WagonManager>())
         {
             current = collision.gameObject.GetComponent<WagonManager>();
         }
@@ -225,8 +264,8 @@ public class MoveScript : MonoBehaviour
                 shepard.Play();
             }
         }
-        
-        if(other.tag == "lvl3")
+
+        if (other.tag == "lvl3")
         {
             if (!lvl4.IsPlaying())
             {
@@ -239,29 +278,33 @@ public class MoveScript : MonoBehaviour
         {
             temp2 += (float)0.1f * Time.deltaTime;
             lvl4.SetParameter("ToCredits", temp2);
-            if(temp2 >= 1)
+            if (temp2 >= 1)
             {
                 lvl4.Stop();
             }
         }
 
-        if(other.tag == "lvl3")
+        if (other.tag == "lvl3")
         {
+            wobbel.Stop();
             shepard.Stop();
         }
 
-        if (other.tag == "lvl2" || other.tag == "tempDisable")
+        if (other.tag == "lvl2" || other.tag == "tempDisable" || other.tag == "lvl4")
         {
-            if (!wobbel.IsPlaying())
+            if (other.tag == "lvl4" || other.tag == "lvl2")
             {
-                wobbel.Play();
+                if (!wobbel.IsPlaying())
+                {
+                    wobbel.Play();
+                }
             }
             lvl2 = true;
             lvl2Mech.enabled = true;
         }
         else
         {
-            wobbel.Stop();
+
             lvl2 = false;
             lvl2Mech.enabled = false;
             lvl2Mech.imageFade.color = new Color(0, 0, 0, 0);
@@ -306,7 +349,8 @@ public class MoveScript : MonoBehaviour
             emitter.SetParameter("panic level", temp);
             if (!emitter.IsPlaying())
             {
-                if (!played) {
+                if (!played)
+                {
                     played = true;
                     Debug.Log("reee");
                     emitter.Play();

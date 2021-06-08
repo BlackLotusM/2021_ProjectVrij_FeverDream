@@ -2404,7 +2404,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4701,6 +4701,7 @@ MonoBehaviour:
   shepard: {fileID: 309825006}
   wobbel: {fileID: 1256993109}
   lvl4: {fileID: 626209544}
+  disableWobbel: 0
   temp2: 0
 --- !u!114 &741354931
 MonoBehaviour:
@@ -11160,6 +11161,8 @@ MonoBehaviour:
   c: {fileID: 1703546508}
   tm: {fileID: 741354932}
   btn: {fileID: 1971258681}
+  vidPlayer: {fileID: 1409552450}
+  clip: {fileID: 32900000, guid: 3b4d37ed1f9d84626a077ace8b13e488, type: 3}
 --- !u!114 &1568115792
 MonoBehaviour:
   m_ObjectHideFlags: 0

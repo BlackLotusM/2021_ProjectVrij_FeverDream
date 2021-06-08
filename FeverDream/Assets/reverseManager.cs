@@ -29,7 +29,6 @@ public class reverseManager : MonoBehaviour
     {
         if(count > 18)
         {
-            Debug.Log("test");
             count = 0;
             dm.initialMove = false;
             Color temp = dm.imageFade.color;

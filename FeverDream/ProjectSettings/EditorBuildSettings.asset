@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AudioSlider.unity
     guid: 5389c6670b5199946a4e953d27033b6a
   - enabled: 1
